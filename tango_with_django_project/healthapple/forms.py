@@ -1,8 +1,9 @@
 from django import forms
 from healthapple.models import Page, Category, UserProfile
-from django.contrib.auth.models import UserProfile
+from django.contrib.auth.models import User, UserProfile
 
 class CategoryForm(forms.ModelForm):
+	user = models.ForeignKey(User)
 	name = models.CharField(max_length=128)
 	
 	class Meta:
@@ -11,11 +12,12 @@ class CategoryForm(forms.ModelForm):
 		
 class PageForm(forms.ModelForm):
 	category = models.ForeignKey(Category)
-	title = models.CharField(max_length=128, help_text="Please enter the title of the page.")
+	title = models.CharField(max_length = 128, help_text="Please enter the title of the page.")
+	summary = models.CharField(max_length = 128, default = "default")
 	url = models.URLField(max_length=200, help_text="Please enter the URL of the page.")
-	readibility_score = models.IntegerField(default = 0)
+	flesch_score = models.IntegerField(default = 0)
+	sentiment_score = models.IntegerField(default = 0)
 	subjectivity_score = models.IntegerField(default = 0)
-	sentimentality_score = models.IntegerField(default = 0)
 	
 	class Meta:
 		model = Page
@@ -37,7 +39,7 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('name', 'surname', 'username', 'email', 'password')
+        fields = ('username', 'email', 'password')
 
 class UserProfileForm(forms.ModelForm):
     class Meta:

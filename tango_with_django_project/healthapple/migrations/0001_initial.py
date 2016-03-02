@@ -17,6 +17,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=128)),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
             options={
             },
@@ -27,10 +28,11 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=128)),
+                ('summary', models.CharField(default=b'default', max_length=128)),
                 ('url', models.URLField()),
-                ('readibility_score', models.IntegerField(default=0)),
+                ('flesch_score', models.IntegerField(default=0)),
+                ('sentiment_score', models.IntegerField(default=0)),
                 ('subjectivity_score', models.IntegerField(default=0)),
-                ('sentimentality_score', models.IntegerField(default=0)),
                 ('category', models.ForeignKey(to='healthapple.Category')),
             ],
             options={
