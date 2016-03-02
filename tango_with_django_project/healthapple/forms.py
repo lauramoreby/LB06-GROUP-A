@@ -13,7 +13,7 @@ class CategoryForm(forms.ModelForm):
 class PageForm(forms.ModelForm):
 	category = models.ForeignKey(Category)
 	title = models.CharField(max_length = 128, help_text="Please enter the title of the page.")
-	summary = models.CharField(max_length = 128, default = "default")
+	summary = models.CharField(max_length = 128, default = '')
 	url = models.URLField(max_length=200, help_text="Please enter the URL of the page.")
 	flesch_score = models.IntegerField(default = 0)
 	sentiment_score = models.IntegerField(default = 0)
