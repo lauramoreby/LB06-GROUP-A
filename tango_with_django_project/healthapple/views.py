@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from healthapple.models import Category, Page
 from healthapple.forms import CategoryForm, PageForm, UserForm, UserProfileForm
+from healthapple.bing_search import run_query
 
 def index(request):
 
@@ -56,3 +57,18 @@ def add_page(request, category_name_slug):
     context_dict = {'form':form, 'category': cat}
 
     return render(request, 'healthapple/add_page.html', context_dict)
+	
+def search(request):
+
+    result_list = []
+
+    if request.method == 'POST':
+        query = request.POST['query'].strip()
+
+        if query:
+            # Run our Bing function to get the results list!
+            result_list = run_query(query)
+
+    return render(request, 'healthapple/search_result.html', {'result_list': result_list})
+	
+	
