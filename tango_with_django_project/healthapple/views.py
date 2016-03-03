@@ -69,6 +69,6 @@ def search(request):
             # Run our Bing function to get the results list!
             result_list = run_query(query)
 
-    return render(request, 'healthapple/search_result.html', {'result_list': result_list})
+    return render(request, 'healthapple/bing_search_result.html', {'result_list': result_list})
 	
 	
