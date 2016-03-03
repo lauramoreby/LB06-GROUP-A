@@ -5,9 +5,14 @@
 {% block body_block %}
 
     <h1>Index</h1>
-
-    <h1><a href="/healthapple/">HealthApple</a></h1>
-
+	
+	<form class="form-inline" id="user_form" method="post" action=".">
+            {% csrf_token %}
+            <!-- Display the search form elements here -->
+            <input class="form-control" type="text" size="50" name="query" value="" id="query" />
+            <input class="btn btn-primary" type="submit" name="submit" value="Search" />
+            <br />
+    </form>
     {% if user.is_authenticated %}
         <h2>You're logged in!</h2>
     {% else %}

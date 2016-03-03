@@ -1,47 +1,45 @@
 from django import forms
 from healthapple.models import Page, Category, UserProfile
-from django.contrib.auth.models import User, UserProfile
+from django.contrib.auth.models import User
 
 class CategoryForm(forms.ModelForm):
-	user = models.ForeignKey(User)
-	name = models.CharField(max_length=128)
+	name = forms.CharField(max_length=128)
 	
 	class Meta:
 		model = Category
 		fields = ('name',)
 		
 class PageForm(forms.ModelForm):
-	category = models.ForeignKey(Category)
-	title = models.CharField(max_length = 128, help_text="Please enter the title of the page.")
-	summary = models.CharField(max_length = 128, default = '')
-	url = models.URLField(max_length=200, help_text="Please enter the URL of the page.")
-	flesch_score = models.IntegerField(default = 0)
-	sentiment_score = models.IntegerField(default = 0)
-	subjectivity_score = models.IntegerField(default = 0)
+	title = forms.CharField(max_length = 128, help_text="Please enter the title of the page.")
+	summary = forms.CharField(max_length = 128)
+	url = forms.URLField(max_length=200, help_text="Please enter the URL of the page.")
+	flesch_score = forms.IntegerField(initial = 0)
+	sentiment_score = forms.IntegerField(initial = 0)
+	subjectivity_score = forms.IntegerField(initial = 0)
 	
 	class Meta:
-		model = Page
+                model = Page
 		exclude = ('category',)
 		
 	def clean(self):
-        cleaned_data = self.cleaned_data
-        url = cleaned_data.get('url')
+		cleaned_data = self.cleaned_data
+                url = cleaned_data.get('url')
 
-        # If url is not empty and doesn't start with 'http://', prepend 'http://'.
-        if url and not (url.startswith('http://') or url.startswith('https://')):
-            url = 'http://' + url
-            cleaned_data['url'] = url
+                # If url is not empty and doesn't start with 'http://', prepend 'http://'.
+                if url and not (url.startswith('http://') or url.startswith('https://')):
+                    url = 'http://' + url
+                    cleaned_data['url'] = url
 
-        return cleaned_data
+                return cleaned_data
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password')
+        fields = ('username', 'email', 'password',)
 
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ('picture')
+        fields = ('picture',)
