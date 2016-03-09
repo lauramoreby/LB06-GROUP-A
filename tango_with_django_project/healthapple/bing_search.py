@@ -1,10 +1,9 @@
 import json
 import urllib, urllib2
-import keys
 
 # Add your BING_API_KEY
 
-BING_API_KEY = keys.BING_API_KEY
+BING_API_KEY = 'Mbvcga7Sl8UTLHaKpLNYal5wSguMpYk010YbXGYVO7Q'
 if __name__ == '__main__':
     main()
 
