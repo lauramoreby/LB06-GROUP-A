@@ -6,6 +6,10 @@ from healthapple.bing_search import run_query
 def index(request):
 
     return render(request, 'healthapple/index.html', {})
+
+def user_profile(request):
+
+	return render(request, 'healthapple/user_profile.html', {})
 	
 def add_category(request):
     # A HTTP POST?

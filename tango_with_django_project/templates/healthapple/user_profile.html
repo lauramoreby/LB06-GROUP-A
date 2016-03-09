@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} - index{% endblock %}
+
+{% block body_block %}
+
+    <h1>My Profile</h1>
+	{% if user.is_authenticated %}
+			<h1>HealthApple says... hello {{ user.username }}!</h1>
+			<h1>A Picture should appear here... {{ user.picture }}!</h1>
+			<li><a href="{% url 'auth_logout' %}?next=/healthapple/">Logout</a></li>
+			<li><a href="{% url 'auth_password_change' %}">Change Password</a></li>
+	{% endif %}
+{% endblock %}
