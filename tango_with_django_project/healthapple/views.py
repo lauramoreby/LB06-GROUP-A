@@ -45,8 +45,7 @@ def add_page(request, category_name_slug):
             if cat:
                 page = form.save(commit=False)
                 page.category = cat
-                page.views = 0
-                page.save()
+                
                 # probably better to use a redirect here.
                 return category(request, category_name_slug)
         else:
