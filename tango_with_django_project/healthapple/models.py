@@ -1,7 +1,8 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 
-class UserProfile(models.Model):
+class Person(models.Model):
 	user = models.OneToOneField(User)
 	
 	picture = models.ImageField(upload_to='profile_images', blank = True)
@@ -12,7 +13,7 @@ class UserProfile(models.Model):
 class Category(models.Model):
 	# many to one relationship with user
 	
-	user = models.ForeignKey(UserProfile, default=None)
+	user = models.ForeignKey(Person, default=None, null=True, blank=True)
 	name = models.CharField(max_length=128)
 	
 	def save(self, *args, **kwargs):

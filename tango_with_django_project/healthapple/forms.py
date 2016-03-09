@@ -1,5 +1,5 @@
 from django import forms
-from healthapple.models import Page, Category, UserProfile
+from healthapple.models import Page, Category, Person
 from django.contrib.auth.models import User
 
 class CategoryForm(forms.ModelForm):
@@ -39,7 +39,7 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ('username', 'email', 'password',)
 
-class UserProfileForm(forms.ModelForm):
+class PersonForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
+        model = Person
         fields = ('picture',)
