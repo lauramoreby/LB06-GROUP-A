@@ -5,9 +5,17 @@ import django
 django.setup()
 
 from healthapple.models import Category, Page, Person
+from django.contrib.auth.models import User
 
 def populate():
-	fever_cat = add_cat('Fever') 
+	# User.objects.filter(username__exact = 'jim')
+	# [Whatever].objects.filter([model]__[field]__exact = [whatever])
+	# user = User.objects.get(id=user_id)
+	jill_person = add_person(User.objects.filter(username__exact = 'jill'), 3)
+	jim_person = add_person(User.objects.filter(username__exact = 'jim'), 4)
+	joe_person = add_person(User.objects.filter(username__exact = 'joe'), 5)
+	
+	fever_cat = add_cat('Fever', Person.objects.get(id=2)) 
 	
 	add_page(cat = fever_cat,
 		title="About Fever",
@@ -33,7 +41,7 @@ def populate():
 		sentiment_score=0,
 		subjectivity_score=0)
 		
-	AIDS_cat = add_cat('AIDS')
+	AIDS_cat = add_cat('AIDS',Person.objects.get(id=3))
 	
 	add_page(cat = AIDS_cat,
 		title="About AIDS",
@@ -69,15 +77,16 @@ def add_page(cat, title, summary, url, flesch_score, sentiment_score, subjectivi
     p.save()
     return p
 
-def add_cat(name):
-    c = Category.objects.get_or_create(name=name)[0]
+def add_cat(name, user):
+    c = Category.objects.get_or_create(name=name, user=user)[0]
     c.save()
     return c
 
-def add_user(user):
-	u = Person.objects.get_or_create(user=user)[0]
-	u.save()
-	return u
+def add_person(user, user_id):
+	user = User.objects.get(id=user_id)
+	per = Person.objects.get_or_create(user=user)[0]
+	per.save()
+	return per
 
 # Start execution here!
 if __name__ == '__main__':
