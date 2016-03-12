@@ -12,15 +12,6 @@ if __name__ == '__main__':
 def main():
     user_query = raw_input()
     run_query(user_query)
-##    count = 1
-##
-##    for result in results:
-##        print "Rank : ", i
-##        print "Title : ", result['title']
-##        print "Title : ", result['link']
-##        print "Flesch score : ", result['flesch_score']
-##
-##        count = count +1
     
 def run_query(search_terms):
     # Specify the base

@@ -1,3 +1,30 @@
 from django.test import TestCase
+from healthapple.models import Category, Person
+from django.contrib.auth.models import User
 
-# Create your tests here.
+class UserTestCase(TestCase):
+    def setUp(self):
+        User.objects.create_user('jack')
+        User.objects.create_user('jill')
+
+    def test__user(self):
+        """Test create user creates correct user"""
+        jack = User.objects.get(id=1)
+        jill = User.objects.get(id=2)
+        self.assertEqual(jack, User.objects.get(username='jack'))
+        self.assertEqual(jill, User.objects.get(username='jill'))
+
+class UserTestPasswordCase(TestCase):
+    def setUp(self):
+        User.objects.create_user('jack', password = 'jack')
+        User.objects.create_user('jill', password = 'jill')
+
+    def test__user_password(self):
+        """Test password not equal to text format"""
+        jack_password = User.objects.filter(id=1).values_list('password', flat=True)
+        jill_password = User.objects.filter(id=2).values_list('password', flat=True)
+        
+        self.assertFalse(jack_password == 'jack')
+        self.assertFalse(jill_password == 'jill')
+
+
