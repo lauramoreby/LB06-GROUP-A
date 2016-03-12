@@ -1,5 +1,7 @@
 import json
 import urllib, urllib2
+from textstat.textstat import textstat
+from textblob import TextBlob
 
 # Add your BING_API_KEY
 
@@ -9,11 +11,16 @@ if __name__ == '__main__':
 
 def main():
     user_query = raw_input()
-
     run_query(user_query)
-
-    print("Title : " + result['Title'])
-    print("Title : " + result['URL'])
+##    count = 1
+##
+##    for result in results:
+##        print "Rank : ", i
+##        print "Title : ", result['title']
+##        print "Title : ", result['link']
+##        print "Flesch score : ", result['flesch_score']
+##
+##        count = count +1
     
 def run_query(search_terms):
     # Specify the base
@@ -66,10 +73,18 @@ def run_query(search_terms):
 
         # Loop through each page returned, populating out results list.
         for result in json_response['d']['results']:
+            blob = TextBlob(result['Description'])
+            for sentence in blob.sentences:
+                sentiment_score = sentence.sentiment.polarity
+                subjectivity_score = sentence.sentiment.subjectivity
+                
             results.append({
             'title': result['Title'],
             'link': result['Url'],
-            'summary': result['Description']})
+            'summary': result['Description'],
+            'flesch_score': textstat.flesch_reading_ease(result['Description']),
+            'sentiment_score': sentiment_score,
+            'subjectivity_score': subjectivity_score})
 
     # Catch a URLError exception - something went wrong when connecting!
     except urllib2.URLError as e:
