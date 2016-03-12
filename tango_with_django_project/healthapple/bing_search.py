@@ -66,14 +66,14 @@ def run_query(search_terms):
         for result in json_response['d']['results']:
             blob = TextBlob(result['Description'])
             for sentence in blob.sentences:
-                sentiment_score = sentence.sentiment.polarity
-                subjectivity_score = sentence.sentiment.subjectivity
+                sentiment_score = '{0:.2f}'.format(sentence.sentiment.polarity)
+                subjectivity_score = '{0:.2f}'.format(sentence.sentiment.subjectivity)
                 
             results.append({
             'title': result['Title'],
             'link': result['Url'],
             'summary': result['Description'],
-            'flesch_score': textstat.flesch_reading_ease(result['Description']),
+            'flesch_score': '{0:.2f}'.format(textstat.flesch_reading_ease(result['Description'])),
             'sentiment_score': sentiment_score,
             'subjectivity_score': subjectivity_score})
 
