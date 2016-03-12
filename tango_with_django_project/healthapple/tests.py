@@ -64,3 +64,31 @@ class CategoryTestCase(TestCase):
         
         self.assertEqual(jack_category, Category.objects.get(name='Fever'))
         self.assertEqual(jill_category, Category.objects.get(name='Insomnia'))
+
+class PageTestCase(TestCase):
+    def setUp(self):
+        jack = User.objects.create_user('jack')
+        jill = User.objects.create_user('jill')
+
+        jack_person = Person.objects.create(user = jack)
+        jill_person = Person.objects.create(user = jill)
+
+        fever_cat = Category.objects.create(name='Fever',person=jack_person)
+        insomnia_cat = Category.objects.create(name='Insomnia',person=jill_person)
+
+        Page.objects.create(category=fever_cat,
+                            title='Fever',
+                            summary='This is about fever',
+                            url='http://www.fever.com',
+                            flesch_score = 80.00,)
+        Page.objects.create()
+    def test__page(self):
+        """Test create Category links to specific user"""
+        jack = Person.objects.get(id=1)
+        jill = Person.objects.get(id=2)
+
+        jack_category = Category.objects.get(person=jack)
+        jill_category = Category.objects.get(person=jill)
+        
+        self.assertEqual(jack_category, Category.objects.get(name='Fever'))
+        self.assertEqual(jill_category, Category.objects.get(name='Insomnia'))

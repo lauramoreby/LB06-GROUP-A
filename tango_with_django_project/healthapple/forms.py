@@ -13,9 +13,9 @@ class PageForm(forms.ModelForm):
 	title = forms.CharField(max_length = 128, help_text="Please enter the title of the page.")
 	summary = forms.CharField(max_length = 128)
 	url = forms.URLField(max_length=200, help_text="Please enter the URL of the page.")
-	flesch_score = forms.IntegerField(initial = 0)
-	sentiment_score = forms.IntegerField(initial = 0)
-	subjectivity_score = forms.IntegerField(initial = 0)
+	flesch_score = forms.DecimalField(initial = 0.00)
+	sentiment_score = forms.DecimalField(initial = 0.00)
+	subjectivity_score = forms.DecimalField(initial = 0.00)
 	
 	class Meta:
                 model = Page

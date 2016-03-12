@@ -31,9 +31,9 @@ class Page(models.Model):
 	title = models.CharField(max_length = 128)
 	summary = models.CharField(max_length = 128, default ="")
 	url = models.URLField()
-	flesch_score = models.IntegerField(default = 0)
-	sentiment_score = models.IntegerField(default = 0)
-	subjectivity_score = models.IntegerField(default = 0)
+	flesch_score = models.DecimalField(max_digits=5,decimal_places=2,default = 0.00)
+	sentiment_score = models.DecimalField(max_digits=4,decimal_places=2,default = 0.00)
+	subjectivity_score = models.DecimalField(max_digits=4,decimal_places=2,default = 0.00)
 	
 	def __unicode__(self):
 		return self.title
