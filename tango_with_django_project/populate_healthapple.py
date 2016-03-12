@@ -11,6 +11,7 @@ def populate():
 	# User.objects.filter(username__exact = 'jim')
 	# [Whatever].objects.filter([model]__[field]__exact = [whatever])
 	# user = User.objects.get(id=user_id)
+	
 	jill_person = add_person(User.objects.filter(username__exact = 'jill'), 3)
 	jim_person = add_person(User.objects.filter(username__exact = 'jim'), 4)
 	joe_person = add_person(User.objects.filter(username__exact = 'joe'), 5)
