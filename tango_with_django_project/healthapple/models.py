@@ -12,7 +12,7 @@ class Person(models.Model):
 class Category(models.Model):
 	# many to one relationship with user
 	
-	user = models.ForeignKey(Person, default=None, null=True, blank=True)
+	person = models.ForeignKey(Person, default=None, null=True, blank=True)
 	name = models.CharField(max_length=128)
 	
 	def save(self, *args, **kwargs):

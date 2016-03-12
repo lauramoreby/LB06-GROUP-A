@@ -42,3 +42,25 @@ class PersonTestCase(TestCase):
         
         self.assertEqual(jack, Person.objects.get(id=1))
         self.assertEqual(jill, Person.objects.get(id=2))
+
+class CategoryTestCase(TestCase):
+    def setUp(self):
+        jack = User.objects.create_user('jack')
+        jill = User.objects.create_user('jill')
+
+        jack_person = Person.objects.create(user = jack)
+        jill_person = Person.objects.create(user = jill)
+
+        Category.objects.create(name='Fever',person=jack_person)
+        Category.objects.create(name='Insomnia',person=jill_person)
+
+    def test__category(self):
+        """Test create Category links to specific user"""
+        jack = Person.objects.get(id=1)
+        jill = Person.objects.get(id=2)
+
+        jack_category = Category.objects.get(person=jack)
+        jill_category = Category.objects.get(person=jill)
+        
+        self.assertEqual(jack_category, Category.objects.get(name='Fever'))
+        self.assertEqual(jill_category, Category.objects.get(name='Insomnia'))

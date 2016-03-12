@@ -78,8 +78,8 @@ def add_page(cat, title, summary, url, flesch_score, sentiment_score, subjectivi
     p.save()
     return p
 
-def add_cat(name, user):
-    c = Category.objects.get_or_create(name=name, user=user)[0]
+def add_cat(name, person):
+    c = Category.objects.get_or_create(name=name, person=person)[0]
     c.save()
     return c
 
