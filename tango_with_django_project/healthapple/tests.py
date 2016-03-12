@@ -1,5 +1,5 @@
 from django.test import TestCase
-from healthapple.models import Category, Person
+from healthapple.models import Category, Person, Page
 from django.contrib.auth.models import User
 
 class UserTestCase(TestCase):
@@ -80,15 +80,28 @@ class PageTestCase(TestCase):
                             title='Fever',
                             summary='This is about fever',
                             url='http://www.fever.com',
-                            flesch_score = 80.00,)
-        Page.objects.create()
+                            flesch_score = 80.00,
+                            sentiment_score = 0.05,
+                            subjectivity_score = 0.05)
+        
+        Page.objects.create(category=insomnia_cat,
+                            title='Imsomnia',
+                            summary='This is about insomnia',
+                            url='http://www.insomnia.com',
+                            flesch_score = 90.00,
+                            sentiment_score = 0.10,
+                            subjectivity_score = 0.10)
+        
     def test__page(self):
-        """Test create Category links to specific user"""
+        """Test create page with correct relationship to specific category"""
         jack = Person.objects.get(id=1)
         jill = Person.objects.get(id=2)
 
         jack_category = Category.objects.get(person=jack)
         jill_category = Category.objects.get(person=jill)
+
+        jack_page = Page.objects.get(category=jack_category)
+        jill_page = Page.objects.get(category=jill_category)
         
-        self.assertEqual(jack_category, Category.objects.get(name='Fever'))
-        self.assertEqual(jill_category, Category.objects.get(name='Insomnia'))
+        self.assertEqual(jack_page, Page.objects.get(id=1))
+        self.assertEqual(jill_page, Page.objects.get(id=2))
