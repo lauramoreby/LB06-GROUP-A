@@ -85,7 +85,7 @@ class PageTestCase(TestCase):
                             subjectivity_score = 0.05)
         
         Page.objects.create(category=insomnia_cat,
-                            title='Imsomnia',
+                            title='Insomnia',
                             summary='This is about insomnia',
                             url='http://www.insomnia.com',
                             flesch_score = 90.00,
@@ -105,3 +105,17 @@ class PageTestCase(TestCase):
         
         self.assertEqual(jack_page, Page.objects.get(id=1))
         self.assertEqual(jill_page, Page.objects.get(id=2))
+
+    def test_page_title(self):
+        """Test create page with correct relationship to specific category"""
+        jack = Person.objects.get(id=1)
+        jill = Person.objects.get(id=2)
+
+        jack_category = Category.objects.get(person=jack)
+        jill_category = Category.objects.get(person=jill)
+
+        fever_page = Page.objects.get(id=1).title
+        insomnia_page = Page.objects.get(id=2).title
+
+        self.assertEqual(unicode('Fever'),fever_page)
+        self.assertEqual(unicode('Insomnia'),insomnia_page)
