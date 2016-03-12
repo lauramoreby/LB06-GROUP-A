@@ -27,4 +27,18 @@ class UserTestPasswordCase(TestCase):
         self.assertFalse(jack_password == 'jack')
         self.assertFalse(jill_password == 'jill')
 
+class PersonTestCase(TestCase):
+    def setUp(self):
+        jack = User.objects.create_user('jack')
+        jill = User.objects.create_user('jill')
 
+        Person.objects.create(user = jack)
+        Person.objects.create(user = jill)
+
+    def test__person(self):
+        """Test create person"""
+        jack = Person.objects.get(id=1)
+        jill = Person.objects.get(id=2)
+        
+        self.assertEqual(jack, Person.objects.get(id=1))
+        self.assertEqual(jill, Person.objects.get(id=2))
