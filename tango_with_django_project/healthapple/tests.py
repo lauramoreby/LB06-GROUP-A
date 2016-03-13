@@ -119,3 +119,26 @@ class PageTestCase(TestCase):
 
         self.assertEqual(unicode('Fever'),fever_page)
         self.assertEqual(unicode('Insomnia'),insomnia_page)
+
+    def test_page_scores(self):
+        """Test checking scores saved"""
+        jack = Person.objects.get(id=1)
+        jill = Person.objects.get(id=2)
+
+        jack_category = Category.objects.get(person=jack)
+        jill_category = Category.objects.get(person=jill)
+
+        fever_flesch_score = Page.objects.get(id=1).flesch_score
+        fever_sentiment_score = Page.objects.get(id=1).sentiment_score
+        fever_subjectivity_score = Page.objects.get(id=1).subjectivity_score
+        insomnia_flesch_score = Page.objects.get(id=2).flesch_score
+        insomnia_sentiment_score = Page.objects.get(id=2).sentiment_score
+        insomnia_subjectivity_score = Page.objects.get(id=2).subjectivity_score
+
+        "unicode is used to synchronise the format"
+        self.assertEqual(80.00,fever_flesch_score)
+        self.assertEqual(unicode(0.05),unicode(fever_sentiment_score))
+        self.assertEqual(unicode(0.05),unicode(fever_subjectivity_score))
+        self.assertEqual(90.00,insomnia_flesch_score)
+        self.assertEqual(unicode(0.10),unicode(insomnia_sentiment_score))
+        self.assertEqual(unicode(0.10),unicode(insomnia_subjectivity_score))
