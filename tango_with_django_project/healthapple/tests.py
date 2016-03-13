@@ -89,8 +89,8 @@ class PageTestCase(TestCase):
                             summary='This is about insomnia',
                             url='http://www.insomnia.com',
                             flesch_score = 90.00,
-                            sentiment_score = 0.10,
-                            subjectivity_score = 0.10)
+                            sentiment_score = -0.10,
+                            subjectivity_score = -0.10)
         
     def test__page(self):
         """Test create page with correct relationship to specific category"""
@@ -140,5 +140,5 @@ class PageTestCase(TestCase):
         self.assertEqual(unicode(0.05),unicode(fever_sentiment_score))
         self.assertEqual(unicode(0.05),unicode(fever_subjectivity_score))
         self.assertEqual(90.00,insomnia_flesch_score)
-        self.assertEqual(unicode(0.10),unicode(insomnia_sentiment_score))
-        self.assertEqual(unicode(0.10),unicode(insomnia_subjectivity_score))
+        self.assertEqual(unicode(-0.10),unicode(insomnia_sentiment_score))
+        self.assertEqual(unicode(-0.10),unicode(insomnia_subjectivity_score))
