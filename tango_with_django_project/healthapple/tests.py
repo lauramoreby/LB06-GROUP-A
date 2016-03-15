@@ -21,11 +21,11 @@ class UserTestPasswordCase(TestCase):
 
     def test__user_password(self):
         """Test password not equal to text format"""
-        jack_password = User.objects.filter(id=1).values_list('password', flat=True)
-        jill_password = User.objects.filter(id=2).values_list('password', flat=True)
+        jack_password = User.objects.get(id=1).password
+        jill_password = User.objects.get(id=2).password
         
-        self.assertFalse(jack_password == 'jack')
-        self.assertFalse(jill_password == 'jill')
+        self.assertFalse(jack_password == unicode('jack'))
+        self.assertFalse(jill_password == unicode('jill'))
 
 class PersonTestCase(TestCase):
     def setUp(self):
