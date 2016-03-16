@@ -18,7 +18,6 @@ def populate():
 	joe_user = add_user("joe","joe@joe.com")
 
 	print "users created"
-	print
 	
 	jill_person = add_person('jill')
 	jim_person = add_person('jim')
