@@ -29,6 +29,7 @@ function getSearchFocus() { // Scrolls to top of page, resets search box value a
 }
 
 function onSearchBoxInput() {
+	document.getElementById("dynamic_results1").innerHTML += "";
 	var result = [1,2,3,4,5,6,7,8,9,10];
 	var text = "";
 	for (i = 0; i < result.length; i++) { 

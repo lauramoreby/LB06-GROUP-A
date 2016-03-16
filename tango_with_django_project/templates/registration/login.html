@@ -3,17 +3,20 @@
 {% block title %} - login{% endblock %}
 
 {% block body_block %}
-
+<div class = 'main_content_card shown' id = 'search_card'>
+    <div class = 'inner_main_content_card'>
 	<div>
-		<h1>Login</h1>
+		Login
 	</div>
 
     <form method="post" action=".">
         {% csrf_token %}
         {{ form.as_p }}
-
-        <input type="submit" value="Log in" />
+        <input class="btn btn-primary waves-effect grey darken-3 waves" type="submit" value="Log in" />
         <input type="hidden" name="next" value="{{ next }}" />
+		
     </form>
-
+	
+</div>
+</div>
 {% endblock %}

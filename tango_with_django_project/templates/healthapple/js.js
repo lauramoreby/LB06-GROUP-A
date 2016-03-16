@@ -34,7 +34,7 @@ function onSearchBoxInput() {
 	for (i = 0; i < result.length; i++) { 
 		text += createCard("Result " + result[i] + " Title<br><br>Description<br>Link");
 	}
-	document.getElementById("dynamic_results1").innerHTML += text;
+	document.getElementById("#dynamic_results1").innerHTML += "hi";
 }
 
 var topBarShadow = {

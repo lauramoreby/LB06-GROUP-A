@@ -13,6 +13,11 @@ body {
 
 }
 
+.centertext {
+	margin: auto;
+	text-align: center;
+}
+
 
 #top_bar {
     z-index: 10;
@@ -38,6 +43,10 @@ body {
 }
 
 .login {
+}
+
+#narrow_box {
+	height: 0.5rem;
 }
 
 .form-control{
