@@ -1,0 +1,260 @@
+html {
+    height:100%;
+    overflow-y:scroll;
+
+}
+
+body {
+
+  background: #E5E5E5;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  margin : 0 auto;
+
+}
+
+
+#top_bar {
+    z-index: 10;
+    position: fixed;
+    width:100%;
+    height: 4rem;
+    background-color: green;
+    -webkit-transition: box-shadow 0.3s;
+
+}
+
+#main_container {
+    z-index: 10;
+    height: 100vh;
+    width: 50rem;
+    margin: auto;
+    -webkit-transition: width 0.2s;
+}
+
+.block {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+
+#logo {
+    display: inline-block;
+    max-width: 7rem;
+
+}
+
+
+#top_bar_within {
+    z-index: 10;
+    display: inline-block;
+    position: fixed;
+    width:inherit;
+    height: 4rem;
+    line-height: 4rem;
+}
+
+#title {
+    display: inline-block;
+    position: absolute;
+    color: white;
+    font-size: 1.5rem;
+
+}
+
+#clubSearch {
+    width: 100%;
+    height: 2.5rem;
+}
+
+.result_line {
+
+    line-height: 4rem;
+}
+
+@keyframes dropHeader {
+    0% {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    80% {
+        opacity: 0.25;
+
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.main_content_card {
+    overflow: hidden;
+    margin:auto;
+    display: block;
+    width: inherit;
+    background-color: white;
+    height: 100%;
+    box-shadow: 1px 1px 4px -2px #000000;
+
+}
+
+.result_card {
+    animation-name: dropHeader;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.2s;
+}
+
+.main_content_card {
+}
+
+
+
+#content {
+
+}
+
+t1 {
+}
+
+.title1 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #383A84;
+}
+
+.std1 {
+
+}
+/* Animation keyframes - you need to add prefixes */
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+/* Loading animation container */
+.loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 28px;
+	height: 28px;
+	margin: -14px 0 0 -14px;
+	bk
+}
+
+/* Spinning circle (inner circle) */
+.loading .maskedCircle {
+	width: 20px;
+	height: 20px;
+	border-radius: 12px;
+	border: 3px solid white;
+}
+
+/* Spinning circle mask */
+.loading .mask {
+	width: 12px;
+	height: 12px;
+	overflow: hidden;
+}
+
+/* Spinner */
+.loading .spinner {
+
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	width: 26px;
+	height: 26px;
+	animation: spin 1s infinite linear;
+}
+.material-icons.md-18 {
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.4rem;
+    line-height: 4rem;
+
+}
+.material-icons.md-24 {
+    font-size: 1.4rem;
+    line-height: 4rem;
+
+
+}
+.material-icons.md-36 {
+
+}
+.material-icons.md-48 { font-size: 48px; }
+
+.inner_main_content_card {
+    padding: 2rem;
+    display: block;
+}
+
+#top_sep {
+    width: inherit;
+    margin-top: 6rem;
+    position: absolute;
+}
+
+#dynamicResults {
+    line-height:3rem;
+    overflow: hidden;
+}
+
+.right {
+    float: right;
+}
+
+.material-icons {
+}
+
+#goUp {
+    margin-right:-1rem;
+    color: white;
+}
+
+#top_bar_dynamic {
+    -webkit-transition: padding 0.2s;
+}
+
+@media only screen and (max-width: 58rem) {
+    #main_container {
+        width: 100%;
+    }
+
+    #top_bar_dynamic {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+#page_bottom {
+    margin: auto;
+    text-align: center;
+}
+
+a {
+    text-decoration:none;
+
+}
+
+.constant {
+    display: block;
+}
+
+#inlinead {
+    height: 0px;
+}
+
+.br {
+    display: none;
+}
+
+#first_Card {
+    width: 100%;
+}
