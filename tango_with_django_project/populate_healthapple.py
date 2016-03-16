@@ -8,13 +8,23 @@ from healthapple.models import Category, Page, Person
 from django.contrib.auth.models import User
 
 def populate():
-	# User.objects.filter(username__exact = 'jim')
-	# [Whatever].objects.filter([model]__[field]__exact = [whatever])
-	# user = User.objects.get(id=user_id)
+
+        admin_superuser = add_superuser("admin","admin@admin.com")
+
+        print "superuser created"
+        
+	jill_user = add_user("jill","jill@jill.com")
+	jim_user = add_user("jim","jim@jim.com")
+	joe_user = add_user("joe","joe@joe.com")
+
+	print "users created"
+	print
 	
-	jill_person = add_person(User.objects.filter(username__exact = 'jill'), 3)
-	jim_person = add_person(User.objects.filter(username__exact = 'jim'), 4)
-	joe_person = add_person(User.objects.filter(username__exact = 'joe'), 5)
+	jill_person = add_person('jill')
+	jim_person = add_person('jim')
+	joe_person = add_person('joe')
+
+	print "populating Category,Pages and Person entities"
 	
 	fever_cat = add_cat('Fever', Person.objects.get(id=2)) 
 	
@@ -67,7 +77,9 @@ def populate():
 		flesch_score=0,
 		sentiment_score=0,
 		subjectivity_score=0)
-		
+
+	print "population completed."
+	
 def add_page(cat, title, summary, url, flesch_score, sentiment_score, subjectivity_score):
     p = Page.objects.get_or_create(category=cat, title=title)[0]
     p.summary = summary
@@ -83,11 +95,29 @@ def add_cat(name, person):
     c.save()
     return c
 
-def add_person(user, user_id):
-	user = User.objects.get(id=user_id)
+def add_person(username):
+	user = User.objects.get(username=username)
 	per = Person.objects.get_or_create(user=user)[0]
 	per.save()
 	return per
+
+def add_superuser(username, email):
+        if User.objects.filter(username=username).exists() and User.objects.filter(username=username)[0].is_superuser:
+                sUser = User.objects.get(username=username)
+        else:
+                sUser = User.objects.create_superuser(username=username,password=username,email=email)
+
+        sUser.save()
+        return sUser
+        
+def add_user(username, email):
+        if User.objects.filter(username=username).exists():
+                user = User.objects.get(username=username)
+        else:
+                user = User.objects.create_user(username=username,password=username,email=email)
+
+        user.save()
+        return user
 
 # Start execution here!
 if __name__ == '__main__':

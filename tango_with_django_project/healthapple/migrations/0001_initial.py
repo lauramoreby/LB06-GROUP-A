@@ -17,7 +17,6 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=128)),
-                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
             options={
             },
@@ -30,9 +29,9 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=128)),
                 ('summary', models.CharField(default=b'', max_length=128)),
                 ('url', models.URLField()),
-                ('flesch_score', models.IntegerField(default=0)),
-                ('sentiment_score', models.IntegerField(default=0)),
-                ('subjectivity_score', models.IntegerField(default=0)),
+                ('flesch_score', models.DecimalField(default=0.0, max_digits=5, decimal_places=2)),
+                ('sentiment_score', models.DecimalField(default=0.0, max_digits=4, decimal_places=2)),
+                ('subjectivity_score', models.DecimalField(default=0.0, max_digits=4, decimal_places=2)),
                 ('category', models.ForeignKey(to='healthapple.Category')),
             ],
             options={
@@ -40,7 +39,7 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
-            name='UserProfile',
+            name='Person',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('picture', models.ImageField(upload_to=b'profile_images', blank=True)),
@@ -49,5 +48,11 @@ class Migration(migrations.Migration):
             options={
             },
             bases=(models.Model,),
+        ),
+        migrations.AddField(
+            model_name='category',
+            name='person',
+            field=models.ForeignKey(default=None, blank=True, to='healthapple.Person', null=True),
+            preserve_default=True,
         ),
     ]

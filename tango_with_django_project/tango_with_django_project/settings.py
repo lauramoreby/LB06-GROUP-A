@@ -45,7 +45,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'healthapple',
-	'registration',
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
