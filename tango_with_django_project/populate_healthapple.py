@@ -26,7 +26,7 @@ def populate():
 
 	print "populating Category,Pages and Person entities"
 	
-	fever_cat = add_cat('Fever', Person.objects.get(id=2)) 
+	fever_cat = add_cat('Fever', Person.objects.get(id=1)) 
 	
 	add_page(cat = fever_cat,
 		title="About Fever",
@@ -52,7 +52,7 @@ def populate():
 		sentiment_score=0,
 		subjectivity_score=0)
 		
-	AIDS_cat = add_cat('AIDS',Person.objects.get(id=3))
+	AIDS_cat = add_cat('AIDS',Person.objects.get(id=2))
 	
 	add_page(cat = AIDS_cat,
 		title="About AIDS",
@@ -78,7 +78,34 @@ def populate():
 		sentiment_score=0,
 		subjectivity_score=0)
 
+	insomnia_cat = add_cat('Insomnia',Person.objects.get(id=3))
+	
+	add_page(cat = insomnia_cat,
+		title="About insomnia",
+		summary = "This is about insomnia",
+		url = "http://www.nhs.uk/Conditions/Insomnia/Pages/Introduction.aspx",
+		flesch_score=0,
+		sentiment_score=0,
+		subjectivity_score=0)
+		
+	add_page(cat = insomnia_cat,
+		title="Insomnia symptoms",
+		summary = "Symptoms of insomnia",
+		url = "https://sleepfoundation.org/sleep-disorders-problems/insomnia/symptoms",
+		flesch_score=0,
+		sentiment_score=0,
+		subjectivity_score=0)
+	
+	add_page(cat = insomnia_cat,
+		title="Insomnia cure",
+		summary = "This how to cure insomnia",
+		url = "http://www.nhs.uk/Conditions/Insomnia/Pages/Treatment.aspx",
+		flesch_score=0,
+		sentiment_score=0,
+		subjectivity_score=0)
+
 	print "population completed."
+
 	
 def add_page(cat, title, summary, url, flesch_score, sentiment_score, subjectivity_score):
     p = Page.objects.get_or_create(category=cat, title=title)[0]
