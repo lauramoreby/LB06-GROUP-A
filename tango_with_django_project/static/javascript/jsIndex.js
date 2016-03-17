@@ -2,6 +2,10 @@
 function init() { // Runs when the page is first loaded
 }
 
+$(document).ready( function () {
+  alert("hi");
+}
+
 function createCard(content) {
     return "<div class = 'main_content_card result_card'><div class = 'inner_main_content_card'>" + content + "</div></div><br>"
 }
@@ -45,4 +49,9 @@ var topBarShadow = {
     hide: function() {
         $("#top_bar").css("box-shadow","");
     }
+}
+
+function passChange() {
+	alert("hi");
+	$('.error').fadeIn(400).delay(3000).fadeOut(400); //fade out after 3 seconds
 }

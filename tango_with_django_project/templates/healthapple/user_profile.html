@@ -6,12 +6,19 @@
 <div class = 'main_content_card shown' id = 'search_card'>
     <div class = 'inner_main_content_card'>
 	{% if user.is_authenticated %}
+		{% if user.picture %}
+			<img src="{% static 'images/default-user.png' %}" alt="Paris">
+		{% if user.picture %}	
 			{{ user.username }}
 			{{ person.picture }}
 			{{ user.email }}
-			<a class="waves-effect waves btn-flat black-text">Button</a>
-			<li><a href="{% url 'auth_logout' %}?next=/healthapple/">Logout</a></li>
-			<li><a href="{% url 'auth_password_change' %}">Change Password</a></li>
+			<br>
+			<br>
+			
+			<br>
+			<a href="{% url 'auth_logout' %}?next=/healthapple/" class="waves-effect waves btn-flat black-text right">Logout</a>
+			<a href="{% url 'auth_password_change' %}" class="waves-effect waves btn-flat black-text right">Change Password</a>
+			<br>
 	{% endif %}
 	
 </div>
