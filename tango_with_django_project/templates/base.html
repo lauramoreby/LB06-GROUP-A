@@ -33,7 +33,7 @@
 
 				  <div id = 'goUp' class = 'waves-effect waves-teal right login'>
 					{% if user.is_authenticated %}
-					<a  href="{% url 'auth_logout' %}"class="waves-effect waves btn-flat">{{ user.username }}</a>
+					<a  href="{% url 'user_profile' %}"class="waves-effect waves btn-flat">{{ user.username }}</a>
 					{% else %}
 					<a href="{% url 'auth_login' %}" class="waves-effect waves btn-flat">LOGIN</a>
 					{% endif %}
