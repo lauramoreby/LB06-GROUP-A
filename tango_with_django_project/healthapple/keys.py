@@ -1,0 +1,1 @@
+bing_api_key = 'Mbvcga7Sl8UTLHaKpLNYal5wSguMpYk010YbXGYVO7Q'
