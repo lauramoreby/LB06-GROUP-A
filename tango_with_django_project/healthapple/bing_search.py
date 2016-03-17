@@ -1,12 +1,11 @@
 import json
 import urllib, urllib2
+
 from textstat.textstat import textstat
 from textblob import TextBlob
-from keys import *
+from keys import BING_API_KEY
 
-# Add your BING_API_KEY
 
-BING_API_KEY = BING_API_KEY #get key from keys
 if __name__ == '__main__':
     main()
 
@@ -76,7 +75,9 @@ def run_query(search_terms):
             'summary': result['Description'],
             'flesch_score': '{0:.2f}'.format(textstat.flesch_reading_ease(result['Description'])),
             'sentiment_score': '{0:.2f}'.format(sentiment_score),
-            'subjectivity_score': '{0:.2f}'.format(subjectivity_score)})
+            'subjectivity_score': '{0:.2f}'.format(subjectivity_score)
+            'source':'Bing'})
+
 
     # Catch a URLError exception - something went wrong when connecting!
     except urllib2.URLError as e:
@@ -84,3 +85,4 @@ def run_query(search_terms):
 
     # Return the list of results to the calling function.
     return results
+

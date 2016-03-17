@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} - index{% endblock %}
+
+{% block body_block %}
+	{% if result_list %}
+        <!-- Display search results in an ordered list -->
+        <div class="panel-body">
+            <div class="list-group">
+            {{ result_list }}
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}
