@@ -6,7 +6,7 @@ from keys import *
 
 # Add your BING_API_KEY
 
-BING_API_KEY = bing_api_key #get key from keys
+BING_API_KEY = BING_API_KEY #get key from keys
 if __name__ == '__main__':
     main()
 
