@@ -2,6 +2,10 @@
 function init() { // Runs when the page is first loaded
 }
 
+$(document).ready( function () {
+  alert("hi");
+}
+
 function createCard(content) {
     return "<div class = 'main_content_card result_card'><div class = 'inner_main_content_card'>" + content + "</div></div><br>"
 }
@@ -11,6 +15,7 @@ function toTop() { // Scrolls to top of page
 }
 
 function onScroll() {
+	alert("hi");
     loseSearchFocus();
     if ($("body").scrollTop() != 0) {topBarShadow.show();}
     else {topBarShadow.hide();}
@@ -28,16 +33,6 @@ function getSearchFocus() { // Scrolls to top of page, resets search box value a
     });
 }
 
-function onSearchBoxInput() {
-	document.getElementById("dynamic_results1").innerHTML += "";
-	var result = [1,2,3,4,5,6,7,8,9,10];
-	var text = "";
-	for (i = 0; i < result.length; i++) { 
-		text += createCard("Result " + result[i] + " Title<br><br>Description<br>Link");
-	}
-	document.getElementById("dynamic_results1").innerHTML += text;
-}
-
 var topBarShadow = {
     show: function() {
         $("#top_bar").css("box-shadow","0px -6px 6px 6px #000000");
@@ -45,4 +40,9 @@ var topBarShadow = {
     hide: function() {
         $("#top_bar").css("box-shadow","");
     }
+}
+
+function passChange() {
+	alert("hi");
+	$('.error').fadeIn(400).delay(3000).fadeOut(400); //fade out after 3 seconds
 }
