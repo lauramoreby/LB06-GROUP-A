@@ -15,6 +15,7 @@ function toTop() { // Scrolls to top of page
 }
 
 function onScroll() {
+	alert("hi");
     loseSearchFocus();
     if ($("body").scrollTop() != 0) {topBarShadow.show();}
     else {topBarShadow.hide();}
@@ -30,16 +31,6 @@ function getSearchFocus() { // Scrolls to top of page, resets search box value a
         $("#clubSearch").val('');
         $("#clubSearch").focus();
     });
-}
-
-function onSearchBoxInput() {
-	document.getElementById("dynamic_results1").innerHTML += "";
-	var result = [1,2,3,4,5,6,7,8,9,10];
-	var text = "";
-	for (i = 0; i < result.length; i++) { 
-		text += createCard("Result " + result[i] + " Title<br><br>Description<br>Link");
-	}
-	document.getElementById("dynamic_results1").innerHTML += text;
 }
 
 var topBarShadow = {
