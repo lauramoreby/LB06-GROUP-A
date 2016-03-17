@@ -2,10 +2,11 @@ import json
 import urllib, urllib2
 from textstat.textstat import textstat
 from textblob import TextBlob
+from keys import *
 
 # Add your BING_API_KEY
 
-BING_API_KEY = 'Mbvcga7Sl8UTLHaKpLNYal5wSguMpYk010YbXGYVO7Q'
+BING_API_KEY = bing_api_key #get key from keys
 if __name__ == '__main__':
     main()
 
