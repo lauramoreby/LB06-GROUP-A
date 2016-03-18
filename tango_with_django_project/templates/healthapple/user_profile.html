@@ -13,7 +13,7 @@
 			<br>
 			
 			<br>
-			<a href="{% url 'auth_logout' %}?next=/healthapple/" class="waves-effect waves btn-flat black-text right">Logout</a>
+			<a onclick = "javascript:notificationEnabler('logout')" href="{% url 'auth_logout' %}?next=/healthapple/" class="waves-effect waves btn-flat black-text right">Logout</a>
 			<a href="{% url 'auth_password_change' %}" class="waves-effect waves btn-flat black-text right">Change Password</a>
 			<br>
 	{% endif %}

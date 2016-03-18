@@ -9,7 +9,7 @@
 		Login
 	</div>
 
-    <form method="post" action=".">
+    <form onsubmit = "javascript:notificationEnabler('login')" method="post" action=".">
         {% csrf_token %}
         {{ form.as_p }}
         <input class="btn btn-primary waves-effect grey darken-3 waves" type="submit" value="Log in" />
