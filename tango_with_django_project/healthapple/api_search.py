@@ -14,8 +14,6 @@ if __name__ == '__main__':
     main()
 
 def run_query(search_terms):
-
-
     query = search_terms + " "
 
     bing_url = urllib2.Request("https://api.datamarket.azure.com/Bing/Search/Web?$format=json&Query=%27" + query.replace(' ', '%27'))
@@ -50,5 +48,4 @@ def run_query(search_terms):
     pool.join()
 
     # Return the list of results to the calling function.
-    return responses
-
+    return responses[0]
