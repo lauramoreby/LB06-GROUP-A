@@ -18,6 +18,26 @@ body {
 	text-align: center;
 }
 
+.profile-pic {
+  margin: 1.5rem;
+  width: 30%;
+}
+
+.material-icons.profile{ 
+  padding-right:2rem;
+  color: rgba(0, 0, 0, 0.54);
+  
+}
+
+.material-icons {
+  vertical-align: middle;
+}
+
+#user-details {
+  line-height:3rem;
+  margin-top: 1.5rem;
+  margin-right: 11rem;
+}
 
 #top_bar {
     z-index: 10;
@@ -26,6 +46,11 @@ body {
     height: 4rem;
     -webkit-transition: box-shadow 0.3s;
 
+}
+
+.bottom {
+  position: relative; 
+  bottom: 0rem;
 }
 
 #main_container {
