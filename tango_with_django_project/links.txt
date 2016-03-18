@@ -1,1 +1,3 @@
 https://docs.djangoproject.com/en/1.8/topics/http/views/
+
+http://stackoverflow.com/questions/32465516/serving-an-html-file-with-django-without-template-rendering
