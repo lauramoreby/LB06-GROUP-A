@@ -6,18 +6,11 @@
 
 <div onload = "javascript:passChange()" class = 'main_content_card shown' id = 'search_card'>
     <div class = 'inner_main_content_card'>
-		<form class="form-inline" id="user_form" method="get" >
-            {% csrf_token %}
-            <!-- Display the search form elements here -->
-            <input class="form-control" type="text" name="query" value="" id="clubSearch" />
-            <input class="btn btn-primary waves-effect grey darken-3 waves" type="submit" name="submit" value="Search" />
-            <br/>
-			
-		</form>
-	<br><div class='error' style='display:none'>Event Created</div>
-	
+        <input class="form-control" type="text" name="query" value="" id="clubSearch" />
+        <input class="btn btn-primary waves-effect grey darken-3 waves" type="submit" name="submit" value="Search" />
+        <br/>
+	  <br>
 </div>
-
 
 
 {% endblock %}
