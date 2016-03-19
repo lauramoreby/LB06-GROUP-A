@@ -24,7 +24,7 @@ body {
 }
 
 .material-icons.profile{ 
-  padding-right:2rem;
+  padding-right:1rem;
   color: rgba(0, 0, 0, 0.54);
   
 }
@@ -33,10 +33,16 @@ body {
   vertical-align: middle;
 }
 
-#user-details {
+.user-details  {
+  margin-top: 1rem;
   line-height:3rem;
-  margin-top: 1.5rem;
-  margin-right: 11rem;
+  
+}
+
+.profile-spacer {height: 8rem;}
+
+.details-only {
+  padding-left: 1.8rem;
 }
 
 #top_bar {
@@ -185,48 +191,6 @@ t1 {
 .std1 {
 
 }
-/* Animation keyframes - you need to add prefixes */
-@keyframes spin {
-	from { transform: rotate(0deg); }
-	to { transform: rotate(360deg); }
-}
-
-/* Loading animation container */
-.loading {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 28px;
-	height: 28px;
-	margin: -14px 0 0 -14px;
-	bk
-}
-
-/* Spinning circle (inner circle) */
-.loading .maskedCircle {
-	width: 20px;
-	height: 20px;
-	border-radius: 12px;
-	border: 3px solid white;
-}
-
-/* Spinning circle mask */
-.loading .mask {
-	width: 12px;
-	height: 12px;
-	overflow: hidden;
-}
-
-/* Spinner */
-.loading .spinner {
-
-	position: absolute;
-	left: 1px;
-	top: 1px;
-	width: 26px;
-	height: 26px;
-	animation: spin 1s infinite linear;
-}
 .material-icons.md-18 {
 
     padding-left: 1rem;
@@ -262,13 +226,6 @@ t1 {
     overflow: hidden;
 }
 
-.right {
-    float: right;
-	position: relative;
-}
-
-.material-icons {
-}
 
 #goUp {
     margin-right:-1rem;
@@ -288,6 +245,7 @@ t1 {
         padding-left: 3rem;
         padding-right: 3rem;
     }
+
 }
 
 #page_bottom {
@@ -304,13 +262,6 @@ a {
     display: block;
 }
 
-#inlinead {
-    height: 0px;
-}
-
-.br {
-    display: none;
-}
 
 #first_Card {
     width: 100%;

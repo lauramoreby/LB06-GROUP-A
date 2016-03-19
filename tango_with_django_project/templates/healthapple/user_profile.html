@@ -7,18 +7,18 @@
     <div class = 'inner_main_content_card'>
       
 	{% if user.is_authenticated %}
-      <img class="responsive-img profile-pic left" src="{% static "images/default-user.png" %}" >
-      <div class = ''></div>
-      <div class = 'right' id = "user-details">
-		  	<i class="material-icons profile">person</i>{{ user.username }}<br>
-		  	<i class="material-icons profile">email</i>{{ user.email }}
+      <img class="responsive-img profile-pic" src="{% static "images/default-user.png" %}" >
+      <div class = 'right user-details'>
+        <div class = "details-only">
+		  	<i class="material-icons profile">person</i>{{ user.username |title }}<br>
+		  	<i class="material-icons profile">email</i>{{ user.email |upper }}<br>
+		  	<div class = "profile-spacer"></div>
+		  	<a onclick = "javascript:notificationEnabler('logout')" href="{% url 'auth_logout' %}?next=/healthapple/" class="waves-effect waves btn-flat black-text">Logout</a>
+			  <a href="{% url 'auth_password_change' %}" class="waves-effect waves btn-flat black-text">Change Password</a>
+		  	</div>
+
 			</div>
-			<br>
-			<br>
-			<br><br><br><br><br><br>
-			<br>
-			<a onclick = "javascript:notificationEnabler('logout')" href="{% url 'auth_logout' %}?next=/healthapple/" class="waves-effect waves btn-flat black-text right bottom">Logout</a>
-			<a href="{% url 'auth_password_change' %}" class="waves-effect waves btn-flat black-text right bottom">Change Password</a>
+
 	{% endif %}
 	
 </div>
