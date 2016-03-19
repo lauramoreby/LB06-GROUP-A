@@ -12,9 +12,9 @@
         <div class = "details-only">
 		  	<i class="material-icons profile">person</i>{{ user.username |title }}<br>
 		  	<i class="material-icons profile">email</i>{{ user.email |upper }}<br>
-		  	<div class = "profile-spacer"></div>
-		  	<a onclick = "javascript:notificationEnabler('logout')" href="{% url 'auth_logout' %}?next=/healthapple/" class="waves-effect waves btn-flat black-text">Logout</a>
-			  <a href="{% url 'auth_password_change' %}" class="waves-effect waves btn-flat black-text">Change Password</a>
+		  	<br>
+		  	<a onclick = "javascript:notificationEnabler('logout')" href="{% url 'auth_logout' %}?next=/healthapple/" class="waves-effect waves btn-primary btn-flat black-text">Logout</a>
+			  <a href="{% url 'auth_password_change' %}" class="waves-effect waves btn-flat btn-primary black-text">Change Password</a>
 		  	</div>
 
 			</div>
