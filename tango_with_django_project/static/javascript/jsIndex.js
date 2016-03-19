@@ -67,5 +67,14 @@ function passChange() {
 }
 
 function search() {
-  document.getElementById("spinner").innerHTML= "<div class = 'spinner'><div class=\"preloader-wrapper big active\"> <div class=\"spinner-layer spinner-green-only\"> <div class=\"circle-clipper left\"> <div class=\"circle\"><\/div> <\/div><div class=\"gap-patch\"> <div class=\"circle\"><\/div> <\/div><div class=\"circle-clipper right\"> <div class=\"circle\"><\/div> <\/div> <\/div> <\/div></div>";
+  // put the content into a hidden div
+  $('#spinner-hidden').html("<br><br><div class = 'spinner'><div class=\"preloader-wrapper big active\"> <div class=\"spinner-layer spinner-green-only\"> <div class=\"circle-clipper left\"> <div class=\"circle\"><\/div> <\/div><div class=\"gap-patch\"> <div class=\"circle\"><\/div> <\/div><div class=\"circle-clipper right\"> <div class=\"circle\"><\/div> <\/div> <\/div> <\/div></div>");
+
+  // get the target height
+  var newHeight = $('#spinner-hidden').height();
+  
+  // animate height and set content
+  $('#spinner').animate({'height': newHeight},"fast", function(){
+      $('#spinner').html($('#spinner-hidden').html());
+  });
 }
