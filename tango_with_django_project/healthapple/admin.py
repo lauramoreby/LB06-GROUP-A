@@ -8,7 +8,7 @@ class PageAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'person')
 
-class CategoryAdmin(admin.ModelAdmin):
+class PersonAdmin(admin.ModelAdmin):
     list_display = ('user', 'picture')
 	
 admin.site.register(Category, CategoryAdmin)
