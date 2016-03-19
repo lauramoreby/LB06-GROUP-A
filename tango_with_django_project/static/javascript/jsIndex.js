@@ -65,3 +65,7 @@ var topBarShadow = {
 function passChange() {
 	$('.error').fadeIn(400).delay(3000).fadeOut(400); //fade out after 3 seconds
 }
+
+function search() {
+  document.getElementById("spinner").innerHTML= "<div class = 'spinner'><div class=\"preloader-wrapper big active\"> <div class=\"spinner-layer spinner-green-only\"> <div class=\"circle-clipper left\"> <div class=\"circle\"><\/div> <\/div><div class=\"gap-patch\"> <div class=\"circle\"><\/div> <\/div><div class=\"circle-clipper right\"> <div class=\"circle\"><\/div> <\/div> <\/div> <\/div></div>";
+}

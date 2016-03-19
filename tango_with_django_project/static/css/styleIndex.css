@@ -76,6 +76,12 @@ body {
 .login {
 }
 
+.spinner {
+  margin-top: 5rem;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
 #narrow_box {
 	height: 0.5rem;
 }
@@ -159,6 +165,8 @@ body {
     background-color: white;
     height: 100%;
     box-shadow: 1px 1px 4px -2px #000000;
+    -webkit-transition: height 1s;
+}
 
 }
 
@@ -168,10 +176,9 @@ body {
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
     animation-duration: 0.2s;
+    
 }
 
-.main_content_card {
-}
 
 
 
@@ -213,6 +220,9 @@ t1 {
 .inner_main_content_card {
     padding: 2rem;
     display: block;
+    -webkit-transition: width 0.2s;
+    -webkit-transition: height 1s;
+
 }
 
 #top_sep {
