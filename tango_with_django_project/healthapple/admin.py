@@ -7,7 +7,10 @@ class PageAdmin(admin.ModelAdmin):
 # Add in this class to customized the Admin Interface
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'person')
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('user', 'picture')
 	
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Page, PageAdmin)
-admin.site.register(Person)
+admin.site.register(Person, PersonAdmin)
