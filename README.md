@@ -19,6 +19,9 @@ For this application, we uses three API, namely BingSearch API, MedlinePlus API 
 ###Contributors
 
 ocherwei : Ong Cher Wei 2126200o
+
 mohsinullah : Mohsin Ullah 2086644u
+
 Baetek : Bartek Juszczak 2135441j
+
 lauramoreby : Laura Moreby 2167714m
