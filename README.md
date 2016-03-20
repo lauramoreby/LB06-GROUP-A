@@ -20,6 +20,8 @@ called corpora by running this code in your terminal, python -m textblob.downloa
 
 For this application, we uses three API, namely BingSearch API, MedlinePlus API and Healthfinder API
 
+We also used Google API for inline query suggestions
+
 ####Contributors
 
 ocherwei : Ong Cher Wei 2126200o
