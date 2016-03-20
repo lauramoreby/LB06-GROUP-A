@@ -32,7 +32,7 @@ def populate():
 		summary = "This is about fever",
 		url = "https://en.wikipedia.org/wiki/Fever",
 		flesch_score=0,
-		sentiment_score=0,
+		polarity_score=0,
 		subjectivity_score=0)
 		
 	add_page(cat = fever_cat,
@@ -40,7 +40,7 @@ def populate():
 		summary = "This is about how to cure fever",
 		url = "http://www.wikihow.com/Cure-a-Fever-at-Home",
 		flesch_score=0,
-		sentiment_score=0,
+		polarity_score=0,
 		subjectivity_score=0)
 	
 	add_page(cat = fever_cat,
@@ -48,7 +48,7 @@ def populate():
 		summary = "This is about symptoms of fever",
 		url = "http://www.nhs.uk/Conditions/Scarlet-fever/Pages/Symptoms.aspx",
 		flesch_score=0,
-		sentiment_score=0,
+		polarity_score=0,
 		subjectivity_score=0)
 		
 	AIDS_cat = add_cat('AIDS','jim')
@@ -58,7 +58,7 @@ def populate():
 		summary = "This is about AIDS",
 		url = "http://www.avert.org/about-hiv-aids/what-hiv-aids",
 		flesch_score=0,
-		sentiment_score=0,
+		polarity_score=0,
 		subjectivity_score=0)
 		
 	add_page(cat = AIDS_cat,
@@ -66,7 +66,7 @@ def populate():
 		summary = "Symptoms of AIDS",
 		url = "http://www.nhs.uk/Conditions/HIV/Pages/Symptomspg.aspx",
 		flesch_score=0,
-		sentiment_score=0,
+		polarity_score=0,
 		subjectivity_score=0)
 	
 	add_page(cat = AIDS_cat,
@@ -74,7 +74,7 @@ def populate():
 		summary = "This how to cure AIDS",
 		url = "http://www.cureaidsreport.org",
 		flesch_score=0,
-		sentiment_score=0,
+		polarity_score=0,
 		subjectivity_score=0)
 
 	insomnia_cat = add_cat('Insomnia','joe')
@@ -84,7 +84,7 @@ def populate():
 		summary = "This is about insomnia",
 		url = "http://www.nhs.uk/Conditions/Insomnia/Pages/Introduction.aspx",
 		flesch_score=0,
-		sentiment_score=0,
+		polarity_score=0,
 		subjectivity_score=0)
 		
 	add_page(cat = insomnia_cat,
@@ -92,7 +92,7 @@ def populate():
 		summary = "Symptoms of insomnia",
 		url = "https://sleepfoundation.org/sleep-disorders-problems/insomnia/symptoms",
 		flesch_score=0,
-		sentiment_score=0,
+		polarity_score=0,
 		subjectivity_score=0)
 	
 	add_page(cat = insomnia_cat,
@@ -100,19 +100,19 @@ def populate():
 		summary = "This how to cure insomnia",
 		url = "http://www.nhs.uk/Conditions/Insomnia/Pages/Treatment.aspx",
 		flesch_score=0,
-		sentiment_score=0,
+		polarity_score=0,
 		subjectivity_score=0)
 
 	print "population completed."
 
 	
-def add_page(cat, title, summary, url, flesch_score, sentiment_score, subjectivity_score):
+def add_page(cat, title, summary, url, flesch_score, polarity_score, subjectivity_score):
         p = Page.objects.get_or_create(category=cat, title=title)[0]
         p.summary = summary
         p.url=url
         p.flesch_score = flesch_score
-        p.sentiment_score = sentiment_score
-        p.subjectivity_score = subjectivity_score
+        p.polarity_score = polarity_score
+        p.subjectivity_score = polarity_score
         p.save()
 
         return p
