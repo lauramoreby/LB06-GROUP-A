@@ -13,6 +13,9 @@ the general web (bing). People using the application would like to self-diagnose
 First you have to make a virtual environment and workon the virtualenvironment. Then go to directory that has requirements.txt and
 type pip install -r requirements.txt
 
+You should run the population script by typing python populate_healthapple.py in your terminal
+After you done this step, test users will be created with a sample category and page. The test users are jill, jim and joe
+
 You might also run into missing corpus error when you submit a query. To fix this issue, you will have to download a python module
 called corpora by running this code in your terminal, python -m textblob.download_corpora
 
