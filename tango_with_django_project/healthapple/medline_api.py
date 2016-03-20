@@ -18,7 +18,7 @@ def run_query(search_terms):
     root_url = 'https://wsearch.nlm.nih.gov/ws/query?db=healthTopics&term='
     
     # Construct the latter part of our request's URL.
-    search_url = root_url + query
+    search_url = root_url + search_terms
 
     # Create our results list which we'll populate.
     results = []
