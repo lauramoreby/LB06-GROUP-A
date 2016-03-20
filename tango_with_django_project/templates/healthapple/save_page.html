@@ -19,10 +19,10 @@
                     {% endfor %}
 
                 <br/>
-            <button class="btn btn-primary" type="submit" name="submit">Save Page</button>
+            <button class="btn btn-primary" type="submit" name="submit" value="Save">Save Page</button>
         </form>
  
-        <p>Category does not exist?<a href= "">Add a new category</a></p>
+        <p>Category does not exist?<a href= "{% url 'add_category' %}">Add a new category</a></p>
  
 
         {% endblock %}

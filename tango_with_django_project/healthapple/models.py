@@ -19,7 +19,7 @@ class Category(models.Model):
 		
 class Page(models.Model):
 	# many to one relationship with Category
-	category = models.ForeignKey(Category)
+	category = models.ForeignKey(Category, default=None, null=True, blank=True)
 	title = models.CharField(max_length = 128)
 	summary = models.CharField(max_length = 128, default ="")
 	url = models.URLField()

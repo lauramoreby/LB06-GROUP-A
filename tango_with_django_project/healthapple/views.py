@@ -42,11 +42,10 @@ def save_page(request):
     if request.method == 'POST':
         form = PageForm(request.POST)
         if form.is_valid():
-            if cat:
-                page = form.save(commit=False)
+                form.save(commit=True)
 
                 # probably better to use a redirect here.
-                return category(request)
+                return index(request)    
         else:
             print form.errors
     else:
