@@ -26,6 +26,7 @@
 				  <div id = 'goUp' class = 'waves-effect waves right login'>
 					{% if user.is_authenticated %}
 					<a  href="{% url 'user_profile' %}"class="btn-flat">{{ user.username }}</a>
+					<a href="{% url 'save_page' %}" class="btn-flat">SAVE PAGE</a>
 					{% else %}
 					<a href="{% url 'auth_login' %}" class="btn-flat">LOGIN</a>
 					{% endif %}
