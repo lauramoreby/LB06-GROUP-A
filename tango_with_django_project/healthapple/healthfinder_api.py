@@ -3,7 +3,7 @@ import urllib, urllib2
 
 from textstat.textstat import textstat
 from textblob import TextBlob
-from keys import BING_API_KEY
+from keys import HEALTHFINDER_API_KEY
 
 
 if __name__ == '__main__':
@@ -12,17 +12,8 @@ if __name__ == '__main__':
 def main():
     user_query = raw_input()
     run_query(user_query)
-    
-def run_query(search_terms):
-    # Specify the base
-    root_url = 'https://api.datamarket.azure.com/Bing/Search/'
-    source = 'Web'
 
-    # Specify how many results we wish to be returned per page.
-    # Offset specifies where in the results list to start from.
-    # With results_per_page = 10 and offset = 11, this would start from page 2.
-    results_per_page = 10
-    offset = 0
+def run_query(search_terms):
 
     # Wrap quotes around our query terms as required by the Bing API.
     # The query we will then use is stored within variable query.
@@ -31,31 +22,12 @@ def run_query(search_terms):
 
     # Construct the latter part of our request's URL.
     # Sets the format of the response to JSON and sets other properties.
-    search_url = "{0}{1}?$format=json&$top={2}&$skip={3}&Query={4}".format(
-        root_url,
-        source,
-        results_per_page,
-        offset,
-        query)
-
-    # Setup authentication with the Bing servers.
-    # The username MUST be a blank string, and put in your API key!
-    username = ''
-
-
-    # Create a 'password manager' which handles authentication for us.
-    password_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
-    password_mgr.add_password(None, search_url, username, BING_API_KEY)
+    search_url = "http://healthfinder.gov/developer/Search.json?api_key="+ HEALTHFINDER_API_KEY + "&keyword="+query
 
     # Create our results list which we'll populate.
     results = []
 
     try:
-        # Prepare for connecting to Bing's servers.
-        handler = urllib2.HTTPBasicAuthHandler(password_mgr)
-        opener = urllib2.build_opener(handler)
-        urllib2.install_opener(opener)
-
         # Connect to the server and read the response generated.
         response = urllib2.urlopen(search_url).read()
 
@@ -63,12 +35,16 @@ def run_query(search_terms):
         json_response = json.loads(response)
 
         # Loop through each page returned, populating out results list.
-        for result in json_response['d']['results']:
+        for result in json_response["Result"]:
+            l=[]
+            for i in result:
+                l+=[i]
+            return l
             blob = TextBlob(result['Description'])
             for sentence in blob.sentences:
                 sentiment_score = sentence.sentiment.polarity
                 subjectivity_score = sentence.sentiment.subjectivity
-                
+
             results.append({
             'title': result['Title'],
             'link': result['Url'],
