@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8614f4af-81ad-4152-a684-65d02eece078" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tango_with_django_project/healthapple/urls.py" afterPath="$PROJECT_DIR$/tango_with_django_project/healthapple/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tango_with_django_project/healthapple/views.py" afterPath="$PROJECT_DIR$/tango_with_django_project/healthapple/views.py" />
     </list>
     <ignored path="LB06-GROUP-A.iws" />
@@ -51,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/tango_with_django_project/healthapple/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.79310346">
-              <caret line="88" column="128" selection-start-line="88" selection-start-column="128" selection-end-line="88" selection-end-column="128" />
+              <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -534,7 +533,7 @@
     <entry file="file://$PROJECT_DIR$/tango_with_django_project/healthapple/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.79310346">
-          <caret line="88" column="128" selection-start-line="88" selection-start-column="128" selection-end-line="88" selection-end-column="128" />
+          <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
