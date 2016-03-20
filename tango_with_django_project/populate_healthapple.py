@@ -25,7 +25,7 @@ def populate():
 
 	print "populating Category,Pages and Person entities"
 	
-	fever_cat = add_cat('Fever', Person.objects.get(id=1)) 
+	fever_cat = add_cat('Fever', 'jill') 
 	
 	add_page(cat = fever_cat,
 		title="About Fever",
@@ -51,7 +51,7 @@ def populate():
 		sentiment_score=0,
 		subjectivity_score=0)
 		
-	AIDS_cat = add_cat('AIDS',Person.objects.get(id=2))
+	AIDS_cat = add_cat('AIDS','jim')
 	
 	add_page(cat = AIDS_cat,
 		title="About AIDS",
@@ -77,7 +77,7 @@ def populate():
 		sentiment_score=0,
 		subjectivity_score=0)
 
-	insomnia_cat = add_cat('Insomnia',Person.objects.get(id=3))
+	insomnia_cat = add_cat('Insomnia','joe')
 	
 	add_page(cat = insomnia_cat,
 		title="About insomnia",
@@ -117,6 +117,8 @@ def add_page(cat, title, summary, url, flesch_score, sentiment_score, subjectivi
     return p
 
 def add_cat(name, person):
+    user = User.objects.get(username=person)
+    person = Person.objects.get(user=user)
     c = Category.objects.get_or_create(name=name, person=person)[0]
     c.save()
     return c
