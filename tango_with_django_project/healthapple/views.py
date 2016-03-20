@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from healthapple.models import Category, Page
+from healthapple.models import Category, Page, Person
+from django.contrib.auth.models import User
 from healthapple.forms import CategoryForm, PageForm, UserForm, PersonForm
 from healthapple.medline_api import run_query
 from django.http import HttpResponse
@@ -13,6 +14,11 @@ def user_profile(request):
 	return render(request, 'healthapple/user_profile.html', {})
 	
 def add_category(request):
+    try:
+        person = Person.objects.get(user=request.user)
+    except Person.DoesNotExist:
+        person = None
+                
     # A HTTP POST?
     if request.method == 'POST':
         form = CategoryForm(request.POST)
@@ -20,7 +26,9 @@ def add_category(request):
         # Have we been provided with a valid form?
         if form.is_valid():
             # Save the new category to the database.
-            form.save(commit=True)
+            cat = form.save(commit=False)
+            cat.person = person
+            cat.save()
 
             # Now call the index() view.
             # The user will be shown the homepage
@@ -39,21 +47,28 @@ def add_category(request):
 	
 def save_page(request):
 
+    try:
+        # show lists of categories the user have
+        person = Person.objects.get(user=request.user)
+        cat = Category.objects.filter(person=person)
+        print cat
+    except Category.DoesNotExist:
+        cat = None
+
     if request.method == 'POST':
         form = PageForm(request.POST)
         if form.is_valid():
-                form.save(commit=True)
+            page = form.save(commit=False)
+            page.save()
 
-                # probably better to use a redirect here.
-                return index(request)    
+            # probably better to use a redirect here.
+            return index(request)    
         else:
             print form.errors
     else:
         form = PageForm()
 
-    context_dict = {'form':form}
-
-    return render(request, 'healthapple/save_page.html', context_dict)
+    return render(request, 'healthapple/save_page.html', {'form': form})
 
 	
 def search(request):

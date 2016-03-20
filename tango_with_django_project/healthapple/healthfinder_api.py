@@ -14,15 +14,9 @@ def main():
     run_query(user_query)
 
 def run_query(search_terms):
-
-    # Wrap quotes around our query terms as required by the Bing API.
-    # The query we will then use is stored within variable query.
-    query = "'{0}'".format(search_terms)
-    query = urllib.quote(query)
-
     # Construct the latter part of our request's URL.
     # Sets the format of the response to JSON and sets other properties.
-    search_url = "http://healthfinder.gov/developer/Search.json?api_key="+ HEALTHFINDER_API_KEY + "&keyword="+query
+    search_url = "http://healthfinder.gov/developer/Search.json?api_key="+ HEALTHFINDER_API_KEY + "&keyword="+search_terms
 
     # Create our results list which we'll populate.
     results = []
@@ -35,29 +29,35 @@ def run_query(search_terms):
         json_response = json.loads(response)
 
         # Loop through each page returned, populating out results list.
-        for result in json_response["Result"]:
-            l=[]
-            for i in result:
-                l+=[i]
-            return l
-            blob = TextBlob(result['Description'])
+        for result in json_response["Result"]["Tools"]:
+            #variable = result.get('MoreInfo')
+            l = []
+            for item in result:
+                l += [str(item) + "  " + str(result[item])]
+            blob = TextBlob(result['Contents'])
             for sentence in blob.sentences:
                 sentiment_score = sentence.sentiment.polarity
                 subjectivity_score = sentence.sentiment.subjectivity
 
+            url = ""
+            if type(result['MoreInfo'])== list:
+                url = result['MoreInfo'][0]['Url']
+            else:
+                url = result['MoreInfo']['Url']
+
             results.append({
             'title': result['Title'],
-            'link': result['Url'],
-            'summary': result['Description'],
-            'flesch_score': '{0:.2f}'.format(textstat.flesch_reading_ease(result['Description'])),
+            'link': url,
+            'summary': result['Contents'],
+            'flesch_score': '{0:.2f}'.format(textstat.flesch_reading_ease(result['Contents'])),
             'sentiment_score': '{0:.2f}'.format(sentiment_score),
             'subjectivity_score': '{0:.2f}'.format(subjectivity_score),
-            'source':'Bing'})
+            'source':'HealthFinder'})
 
 
     # Catch a URLError exception - something went wrong when connecting!
     except urllib2.URLError as e:
-        print "Error when querying the Bing API: ", e
+        print "Error when querying the HealthFinder API: ", e
 
     # Return the list of results to the calling function.
     return results
