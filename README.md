@@ -1,4 +1,4 @@
-# HEALTHAPPLE
+# HEALTHAPPLE , a federated health search application
 ## by LB06-GROUP-A
 
 ###Synopsis
@@ -12,6 +12,8 @@ the general web (bing). People using the application would like to self-diagnose
 First you have to make a virtual environment and workon the virtualenvironment. Then go to directory that has requirements.txt and
 type pip install -r requirements.txt
 
+You might also run into missing corpus error when you submit a query. To fix this issue, you will have to download a python module
+called corpora by running this code in your terminal, python -m textblob.download_corpora
 ###API
 
 For this application, we uses three API, namely BingSearch API, MedlinePlus API and Healthfinder API
