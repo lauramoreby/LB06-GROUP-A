@@ -107,26 +107,29 @@ def populate():
 
 	
 def add_page(cat, title, summary, url, flesch_score, sentiment_score, subjectivity_score):
-    p = Page.objects.get_or_create(category=cat, title=title)[0]
-    p.summary = summary
-    p.url=url
-    p.flesch_score = flesch_score
-    p.sentiment_score = sentiment_score
-    p.subjectivity_score = subjectivity_score
-    p.save()
-    return p
+        p = Page.objects.get_or_create(category=cat, title=title)[0]
+        p.summary = summary
+        p.url=url
+        p.flesch_score = flesch_score
+        p.sentiment_score = sentiment_score
+        p.subjectivity_score = subjectivity_score
+        p.save()
+
+        return p
 
 def add_cat(name, person):
-    user = User.objects.get(username=person)
-    person = Person.objects.get(user=user)
-    c = Category.objects.get_or_create(name=name, person=person)[0]
-    c.save()
-    return c
+        user = User.objects.get(username=person)
+        person = Person.objects.get(user=user)
+        c = Category.objects.get_or_create(name=name, person=person)[0]
+        c.save()
+
+        return c
 
 def add_person(username):
 	user = User.objects.get(username=username)
 	per = Person.objects.get_or_create(user=user)[0]
 	per.save()
+
 	return per
 
 def add_superuser(username, email):
@@ -136,6 +139,7 @@ def add_superuser(username, email):
                 sUser = User.objects.create_superuser(username=username,password=username,email=email)
 
         sUser.save()
+
         return sUser
         
 def add_user(username, email):
@@ -145,6 +149,7 @@ def add_user(username, email):
                 user = User.objects.create_user(username=username,password=username,email=email)
 
         user.save()
+
         return user
 
 # Start execution here!
