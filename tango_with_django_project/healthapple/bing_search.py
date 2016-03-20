@@ -75,7 +75,7 @@ def run_query(search_terms):
             'summary': result['Description'],
             'flesch_score': '{0:.2f}'.format(textstat.flesch_reading_ease(result['Description'])),
             'sentiment_score': '{0:.2f}'.format(sentiment_score),
-            'subjectivity_score': '{0:.2f}'.format(subjectivity_score)
+            'subjectivity_score': '{0:.2f}'.format(subjectivity_score),
             'source':'Bing'})
 
 

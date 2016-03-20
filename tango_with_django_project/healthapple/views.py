@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from healthapple.models import Category, Page
 from healthapple.forms import CategoryForm, PageForm, UserForm, PersonForm
-from healthapple.api_search import run_query
+from healthapple.healthfinder_api import run_query
 from django.http import HttpResponse
 
 def index(request):
