@@ -1,11 +1,10 @@
 import json
 import urllib, urllib2
 
-import xmltodict as xmltodict
 from textstat.textstat import textstat
 from textblob import TextBlob
 import xml.etree.ElementTree
-
+import xml2json
 
 
 if __name__ == '__main__':
@@ -30,10 +29,8 @@ def run_query(search_terms):
         response = urllib2.urlopen(search_url).read()
 
         # Open file and write xml code to file to be parsed later on
-        file = open("temp_xml.txt","w")
-        file.truncate()
-        file.write(response)
-        file.close()
+        print xml2json.xml2json(response)
+
 
 
         # Convert the string response to a Python dictionary object.
