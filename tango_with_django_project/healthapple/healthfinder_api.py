@@ -30,10 +30,6 @@ def run_query(search_terms):
 
         # Loop through each page returned, populating out results list.
         for result in json_response["Result"]["Tools"]:
-            #variable = result.get('MoreInfo')
-            l = []
-            for item in result:
-                l += [str(item) + "  " + str(result[item])]
             blob = TextBlob(result['Contents'])
             for sentence in blob.sentences:
                 sentiment_score = sentence.sentiment.polarity
