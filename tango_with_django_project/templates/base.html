@@ -28,6 +28,7 @@
 					<a  href="{% url 'user_profile' %}"class="btn-flat">{{ user.username }}</a>
 					{% else %}
 					<a href="{% url 'auth_login' %}" class="btn-flat">LOGIN</a>
+					<a href="{% url 'save_page' %}" class="btn-flat">SAVE PAGE</a>
 					{% endif %}
 				  </div>
               </div>
