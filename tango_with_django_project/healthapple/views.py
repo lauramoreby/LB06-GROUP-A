@@ -16,7 +16,7 @@ def user_profile(request):
 def add_category(request):
     try:
         person = Person.objects.get(user=request.user)
-    except Category.DoesNotExist:
+    except Person.DoesNotExist:
         person = None
                 
     # A HTTP POST?
@@ -46,6 +46,14 @@ def add_category(request):
 
 	
 def save_page(request):
+
+    try:
+        # show lists of categories the user have
+        person = Person.objects.get(user=request.user)
+        cat = Category.objects.filter(person=person)
+        print cat
+    except Category.DoesNotExist:
+        cat = None
 
     if request.method == 'POST':
         form = PageForm(request.POST)
