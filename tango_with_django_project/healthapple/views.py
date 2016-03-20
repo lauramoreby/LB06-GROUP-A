@@ -2,7 +2,7 @@ from django.shortcuts import render
 from healthapple.models import Category, Page, Person
 from django.contrib.auth.models import User
 from healthapple.forms import CategoryForm, PageForm, UserForm, PersonForm
-from healthapple.healthfinder_api import run_query
+from healthapple.medline_api import run_query
 from django.http import HttpResponse
 
 def index(request):
