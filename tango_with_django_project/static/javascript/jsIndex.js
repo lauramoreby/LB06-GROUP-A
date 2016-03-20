@@ -78,3 +78,9 @@ function search() {
       $('#spinner').html($('#spinner-hidden').html());
   });
 }
+
+function input () {
+  //function will get called every time a user types something into the search box
+  var word = document.getElementById("clubSearch").value;
+  alert(word);
+}
