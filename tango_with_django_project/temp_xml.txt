@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nlmSearchResult>
+  <term>aids</term>
+  <file>viv_jSVdmY</file>
+  <server>pvlbsrch16</server>
+  <count>73</count>
+  <retstart>0</retstart>
+  <retmax>10</retmax>
+  <list num="73" start="0" per="10">
+    <document rank="2" url="https://www.nlm.nih.gov/medlineplus/hivaids.html">
+      <content name="title">&lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt;</content>
+      <content name="organizationName">National Library of Medicine</content>
+      <content name="altTitle">&lt;span class="qt0"&gt;AIDS&lt;/span&gt;</content>
+      <content name="altTitle">&lt;span class="qt1"&gt;Acquired Immunodeficiency Syndrome&lt;/span&gt;</content>
+      <content name="altTitle">Human Immunodeficiency Virus</content>
+      <content name="altTitle">HIV</content>
+      <content name="FullSummary">&lt;p&gt;HIV stands for human immunodeficiency virus. It kills or damages the body's immune system cells.  &lt;span class="qt0"&gt;AIDS&lt;/span&gt; stands for &lt;span class="qt1"&gt;acquired immunodeficiency syndrome&lt;/span&gt;. It is the most advanced stage of infection with HIV. &lt;/p&gt;&lt;p&gt;HIV most often spreads through unprotected sex with an infected person. It may also spread by sharing drug needles or through contact with the blood of an infected person. Women can give it to their babies during pregnancy or childbirth. &lt;/p&gt;&lt;p&gt;The first signs of HIV infection may be swollen glands and flu-like symptoms. These may come and go a month or two after infection.  Severe symptoms may not appear until months or years later. &lt;/p&gt;&lt;p&gt;A blood test can tell if you have HIV infection. Your health care provider can perform the test, or call the national referral hotline at 1-800-CDC-INFO (24 hours a day, 1-800-232-4636 in English and en español; 1-888-232-6348 - TTY). &lt;/p&gt;&lt;p&gt;There is no cure, but there are many medicines to fight both HIV infection and the infections and cancers that come with it. People can live with the disease for many years. &lt;/p&gt;</content>
+      <content name="mesh">HIV Infections</content>
+      <content name="mesh">&lt;span class="qt1"&gt;Acquired Immunodeficiency Syndrome&lt;/span&gt;</content>
+      <content name="groupName">Infections</content>
+      <content name="groupName">Immune System</content>
+      <content name="snippet"> HIV stands for human immunodeficiency virus. It kills or damages the body's immune system cells.  &lt;span class="qt0"&gt;AIDS&lt;/span&gt; stands for &lt;span class="qt1"&gt;acquired immunodeficiency syndrome&lt;/span&gt;. It is  ... </content>
+    </document>
+    <document rank="0" url="https://www.nlm.nih.gov/medlineplus/hivaidsandinfections.html">
+      <content name="title">&lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; and Infections</content>
+      <content name="organizationName">National Library of Medicine</content>
+      <content name="altTitle">&lt;span class="qt0"&gt;AIDS&lt;/span&gt; and Infections</content>
+      <content name="altTitle">Opportunistic Infections in &lt;span class="qt0"&gt;AIDS&lt;/span&gt;</content>
+      <content name="altTitle">&lt;span class="qt0"&gt;AIDS&lt;/span&gt;-related opportunistic infections</content>
+      <content name="altTitle">OIs</content>
+      <content name="FullSummary">&lt;p&gt;Having &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; weakens your body's immune system. Your immune system normally fights germs 
+that enter your body. When &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; makes it weak, it can't fight germs well. This can lead to 
+serious infections that don't often affect healthy people. These are called opportunistic 
+infections (OIs).&lt;/p&gt;&lt;p&gt;There are many types of OIs. Tuberculosis and a serious 
+related disease,  Mycobacterium avium complex (MAC) are bacterial infections. Viral infections include cytomegalovirus (CMV) and hepatitis C.  Fungi cause thrush (candidiasis), 
+cryptococcal meningitis, pneumocystis carinii pneumonia (PCP) 
+and histoplasmosis, and parasites cause crypto (cryptosporidiosis) and toxo (toxoplasmosis).&lt;/p&gt;&lt;p&gt;Having &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; can make any infection harder to treat. People with &lt;span class="qt0"&gt;AIDS&lt;/span&gt; are also more 
+likely to suffer complications of common illnesses such as the flu. &lt;/p&gt;&lt;p&gt;The good news is that you can help prevent infections by taking your &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; medicines. Other things that can help include practicing safe sex, 
+washing your hands well and often and cooking your food well. &lt;/p&gt;</content>
+      <content name="mesh">&lt;span class="qt0"&gt;AIDS&lt;/span&gt;-Related Opportunistic Infections</content>
+      <content name="groupName">Infections</content>
+      <content name="groupName">Immune System</content>
+      <content name="snippet"> Having &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; weakens your body's immune system. Your immune system normally fights germs 
+that enter your body. When &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; makes it weak, it can't fight  ... </content>
+    </document>
+    <document rank="1" url="https://www.nlm.nih.gov/medlineplus/livingwithhivaids.html">
+      <content name="title">Living with &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt;</content>
+      <content name="organizationName">National Library of Medicine</content>
+      <content name="altTitle">&lt;span class="qt0"&gt;AIDS&lt;/span&gt;--Living With &lt;span class="qt0"&gt;AIDS&lt;/span&gt;</content>
+      <content name="altTitle">&lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt;--Living With</content>
+      <content name="FullSummary">&lt;p&gt;Infection with HIV is serious. But the outlook for people with &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; is improving. If you are infected with HIV, there are many things you can do to help ensure you have a longer, healthier life. One important thing is to take your medicines. Make sure you have a health care provider who knows how to treat HIV. You may want to join a support group. Learn as much as you can about your disease and its treatment. And eat healthy foods and exercise regularly -  things that everyone should try to do. &lt;/p&gt;</content>
+      <content name="mesh">HIV Infections</content>
+      <content name="groupName">Immune System</content>
+      <content name="snippet"> Infection with HIV is serious. But the outlook for people with &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; is improving. If you are infected with HIV, there are many things you can do to help ensure  ... </content>
+    </document>
+    <document rank="3" url="https://www.nlm.nih.gov/medlineplus/hivaidsandpregnancy.html">
+      <content name="title">&lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; and Pregnancy</content>
+      <content name="organizationName">National Library of Medicine</content>
+      <content name="altTitle">&lt;span class="qt0"&gt;AIDS&lt;/span&gt; and Pregnancy</content>
+      <content name="altTitle">Pregnancy and &lt;span class="qt0"&gt;AIDS&lt;/span&gt;</content>
+      <content name="FullSummary">&lt;p&gt;
+If you have &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; and find out you are pregnant or think you may be pregnant, you should let your health care provider know as soon as possible. Some &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; medicines may harm your baby. Your health care provider may want you to take different medicines or change the doses. &lt;/p&gt;&lt;p&gt;
+It is also possible to give HIV to your baby. This is most likely to happen around the time you give birth. For this reason, treatment during this time is very important for protecting your baby from infection. Several treatments may prevent the virus from spreading from you to your baby. Your health care provider can recommend the best one for you.&lt;/p&gt;&lt;p&gt;
+Your baby will also need to have treatment for at least the first six weeks of life. Regular testing will be needed to find out if your baby is infected. 
+&lt;/p&gt;</content>
+      <content name="mesh">Pregnancy</content>
+      <content name="mesh">HIV Infections</content>
+      <content name="groupName">Women</content>
+      <content name="groupName">Pregnancy and Reproduction</content>
+      <content name="groupName">Immune System</content>
+      <content name="groupName">Female Reproductive System</content>
+      <content name="snippet"> 
+If you have &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; and find out you are pregnant or think you may be pregnant, you should let your health care provider know  ... </content>
+    </document>
+    <document rank="4" url="https://www.nlm.nih.gov/medlineplus/hivaidsinwomen.html">
+      <content name="title">&lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; in Women</content>
+      <content name="organizationName">National Library of Medicine</content>
+      <content name="altTitle">&lt;span class="qt0"&gt;AIDS&lt;/span&gt; in Women</content>
+      <content name="FullSummary">&lt;p&gt;HIV, the human immunodeficiency virus, kills or damages cells of the body's immune system. The most advanced stage of infection with &lt;span class="qt2"&gt;HIV is &lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt;, which stands for &lt;span class="qt1"&gt;acquired immunodeficiency syndrome&lt;/span&gt;. &lt;/p&gt;&lt;p&gt;HIV often spreads through unprotected sex with an infected person. It may also spread by sharing drug needles or through contact with the blood of an infected person.&lt;/p&gt;&lt;p&gt;Women can get HIV more easily during vaginal sex than men can.  And if they do get HIV, they have unique problems, including:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Complications such as repeated vaginal yeast infections, severe pelvic inflammatory disease (PID), and a higher risk of cervical cancer&lt;/li&gt;&lt;li&gt;Different side effects from the drugs that treat HIV&lt;/li&gt;&lt;li&gt;The risk of giving HIV to their baby while pregnant or during childbirth&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;There is no cure, but there are many medicines to fight both HIV infection and the infections and cancers that come with it. People can live with the disease for many years. &lt;/p&gt;</content>
+      <content name="mesh">HIV Infections</content>
+      <content name="groupName">Women</content>
+      <content name="groupName">Immune System</content>
+      <content name="snippet"> HIV, the human immunodeficiency virus, kills or damages cells of the body's immune system. The most advanced stage of infection with &lt;span class="qt2"&gt;HIV is &lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt;, which stands  ... </content>
+    </document>
+    <document rank="5" url="https://www.nlm.nih.gov/medlineplus/hivaidsmedicines.html">
+      <content name="title">&lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; Medicines</content>
+      <content name="organizationName">National Library of Medicine</content>
+      <content name="altTitle">&lt;span class="qt0"&gt;AIDS&lt;/span&gt; Medicines</content>
+      <content name="altTitle">PrEP (Pre-Exposure Prophylaxis)</content>
+      <content name="FullSummary">&lt;p&gt;In the early 1980s, when the &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; epidemic began, patients rarely lived longer than a few years. But today, there are many effective medicines to fight the infection, and people with HIV have longer, healthier lives.&lt;/p&gt;&lt;p&gt;There are five major types of medicines:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Reverse transcriptase (RT) inhibitors - interfere with a critical step during the HIV life cycle and keep the virus from making copies of itself&lt;/li&gt;&lt;li&gt;Protease inhibitors - interfere with a protein that HIV uses to make infectious viral particles&lt;/li&gt;&lt;li&gt;Fusion inhibitors - block the virus from entering the body's cells&lt;/li&gt;&lt;li&gt;Integrase inhibitors - block an enzyme HIV needs to make copies of itself&lt;/li&gt;&lt;li&gt;Multidrug combinations - combine two or more different types of drugs into one&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;These medicines help people with HIV, but they are not perfect. They do not cure &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt;. People with HIV infection still have the virus in their bodies. They can still spread HIV to others through unprotected sex and needle sharing, even when they are taking their medicines.&lt;/p&gt;&lt;p&gt;NIH: National Institute of Allergy and Infectious Diseases&lt;/p&gt;</content>
+      <content name="mesh">Antiretroviral Therapy, Highly Active</content>
+      <content name="mesh">Anti-HIV Agents</content>
+      <content name="mesh">HIV Infections</content>
+      <content name="groupName">Immune System</content>
+      <content name="groupName">Drug Therapy</content>
+      <content name="snippet"> In the early 1980s, when the &lt;span class="qt2"&gt;HIV/&lt;/span&gt;&lt;span class="qt0"&gt;&lt;span class="qt2"&gt;AIDS&lt;/span&gt;&lt;/span&gt; epidemic began, patients rarely lived longer than a few years. But today, there are many effective medicines to fight the infection, and people  ... </content>
+    </document>
+    <document rank="6" url="https://www.nlm.nih.gov/medlineplus/hearingaids.html">
+      <content name="title">Hearing &lt;span class="qt0"&gt;Aids&lt;/span&gt;</content>
+      <content name="organizationName">National Library of Medicine</content>
+      <content name="FullSummary">&lt;p&gt;A hearing aid is a small electronic device that you wear in or behind your ear.  It makes some sounds louder.   A hearing aid can help people hear more in both quiet and noisy situations.&lt;/p&gt;&lt;p&gt; Hearing &lt;span class="qt0"&gt;aids&lt;/span&gt; help people who have hearing loss from damage to the small sensory cells in the inner ear. The damage can occur as a result of disease, aging, or injury from noise or certain medicines. Only about one out of five people who would benefit from a hearing aid actually uses one. If you think a hearing aid could help you, visit your doctor. &lt;/p&gt;&lt;p&gt;There are different kinds of hearing &lt;span class="qt0"&gt;aids&lt;/span&gt;.  They differ by size, their placement on or inside the ear, and how much they amplify sound.  The hearing aid that will work best for you depends on what kind of hearing loss you have, and how severe it is.&lt;/p&gt;&lt;p&gt;NIH: National Institute on Deafness and Other Communication Disorders&lt;/p&gt;</content>
+      <content name="mesh">Hearing &lt;span class="qt0"&gt;Aids&lt;/span&gt;</content>
+      <content name="groupName">Ear, Nose and Throat</content>
+      <content name="snippet"> A hearing aid is a small electronic device that you wear in or behind your ear.  It makes some sounds louder.   A hearing aid can help people hear more in  ... </content>
+    </document>
+    <document rank="7" url="https://www.nlm.nih.gov/medlineplus/mobilityaids.html">
+      <content name="title">Mobility &lt;span class="qt0"&gt;Aids&lt;/span&gt;</content>
+      <content name="organizationName">National Library of Medicine</content>
+      <content name="altTitle">Canes</content>
+      <content name="altTitle">Crutches</content>
+      <content name="altTitle">Walkers</content>
+      <content name="altTitle">Wheelchairs</content>
+      <content name="altTitle">Ambulation devices</content>
+      <content name="FullSummary">&lt;p&gt;Mobility &lt;span class="qt0"&gt;aids&lt;/span&gt; help you walk or move from place to place if you are disabled or have an injury. They include&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Crutches&lt;/li&gt;&lt;li&gt;Canes&lt;/li&gt;&lt;li&gt;Walkers&lt;/li&gt;&lt;li&gt;Wheelchairs&lt;/li&gt;&lt;li&gt;Motorized scooters&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;You may need a walker or cane if you are at risk of falling. If you need to keep your body weight off your foot, ankle or knee, you may need crutches. You may need a wheelchair or a scooter if an injury or disease has left you unable to walk. &lt;/p&gt;&lt;p&gt;Choosing these devices takes time and research. You should be fitted for crutches, canes and walkers. If they fit, these devices give you support, but if they don't fit, they can be uncomfortable and unsafe. &lt;/p&gt;</content>
+      <content name="mesh">Self-Help Devices</content>
+      <content name="groupName">Wellness and Lifestyle</content>
+      <content name="snippet"> Mobility &lt;span class="qt0"&gt;aids&lt;/span&gt; help you walk or move from place to place if you are disabled or have an injury.  ... </content>
+    </document>
+    <document rank="8" url="https://www.nlm.nih.gov/medlineplus/africanamericanhealth.html">
+      <content name="title">African American Health</content>
+      <content name="organizationName">National Library of Medicine</content>
+      <content name="FullSummary">&lt;p&gt;Every racial or ethnic group has specific health concerns. Differences in the health of groups can result from&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Genetics&lt;/li&gt;&lt;li&gt;Environmental factors&lt;/li&gt;&lt;li&gt;Access to care&lt;/li&gt;&lt;li&gt;Cultural factors&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;
+On this page, you'll find links to health issues that affect African Americans.&lt;/p&gt;</content>
+      <content name="mesh">African Americans</content>
+      <content name="groupName">Population Groups</content>
+      <content name="snippet"> Every racial or ethnic group has specific health concerns. Differences in the health of groups can result from Genetics  Environmental factors  Access to care   ... </content>
+    </document>
+    <document rank="9" url="https://www.nlm.nih.gov/medlineplus/lymphoma.html">
+      <content name="title">Lymphoma</content>
+      <content name="organizationName">National Library of Medicine</content>
+      <content name="altTitle">Non-Hodgkin Lymphoma</content>
+      <content name="altTitle">Waldenstrom's Macroglobulinemia</content>
+      <content name="FullSummary">&lt;p&gt;Lymphoma is a cancer of a part of the immune system called the lymph system.  There are many types of lymphoma.  One type is Hodgkin disease.  The rest are called non-Hodgkin lymphomas.&lt;/p&gt;&lt;p&gt;Non-Hodgkin lymphomas begin when a type of white blood cell, called a T cell or B cell, becomes abnormal. The cell divides again and again, making more and more abnormal cells. These abnormal cells can spread to almost any other part of the body. Most of the time, doctors don't know why a person gets non-Hodgkin lymphoma. You are at increased risk if you have a weakened immune system or have certain types of infections.&lt;/p&gt;&lt;p&gt;Non-Hodgkin lymphoma can cause many symptoms, such as &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Swollen, painless lymph nodes in the neck, armpits or groin&lt;/li&gt;&lt;li&gt;Unexplained weight loss &lt;/li&gt;&lt;li&gt;Fever &lt;/li&gt;&lt;li&gt;Soaking night sweats &lt;/li&gt;&lt;li&gt;Coughing, trouble breathing or chest pain &lt;/li&gt;&lt;li&gt;Weakness and tiredness that don't go away &lt;/li&gt;&lt;li&gt;Pain, swelling or a feeling of fullness in the abdomen &lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Your doctor will diagnose lymphoma with a physical exam, blood tests, a chest x-ray, and a biopsy.  Treatments include chemotherapy, radiation therapy, targeted therapy, biological therapy, or therapy to remove proteins from the blood. Targeted therapy uses substances that attack cancer cells without harming normal cells.  Biologic therapy boosts your body's own ability to fight cancer. If you don't have symptoms, you may not need treatment right away. This is called watchful waiting.&lt;/p&gt;&lt;p&gt;NIH: National Cancer Institute&lt;/p&gt;</content>
+      <content name="mesh">Lymphoma</content>
+      <content name="groupName">Cancers</content>
+      <content name="groupName">Immune System</content>
+      <content name="snippet"> Lymphoma is a cancer of a part of the immune system called the lymph system.  There are many types of lymphoma.  One type is Hodgkin disease.  The rest are called  ... </content>
+    </document>
+  </list>
+</nlmSearchResult>
