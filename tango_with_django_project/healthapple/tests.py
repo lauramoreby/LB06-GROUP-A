@@ -81,7 +81,7 @@ class PageTestCase(TestCase):
                             summary='This is about fever',
                             url='http://www.fever.com',
                             flesch_score = 80.00,
-                            sentiment_score = 0.05,
+                            polarity_score = 0.05,
                             subjectivity_score = 0.05)
         
         Page.objects.create(category=insomnia_cat,
@@ -89,7 +89,7 @@ class PageTestCase(TestCase):
                             summary='This is about insomnia',
                             url='http://www.insomnia.com',
                             flesch_score = 90.00,
-                            sentiment_score = -0.10,
+                            polarity_score = -0.10,
                             subjectivity_score = -0.10)
         
     def test__page(self):
@@ -129,16 +129,16 @@ class PageTestCase(TestCase):
         jill_category = Category.objects.get(person=jill)
 
         fever_flesch_score = Page.objects.get(id=1).flesch_score
-        fever_sentiment_score = Page.objects.get(id=1).sentiment_score
+        fever_polarity_score = Page.objects.get(id=1).sentiment_score
         fever_subjectivity_score = Page.objects.get(id=1).subjectivity_score
         insomnia_flesch_score = Page.objects.get(id=2).flesch_score
-        insomnia_sentiment_score = Page.objects.get(id=2).sentiment_score
+        insomnia_polarity_score = Page.objects.get(id=2).sentiment_score
         insomnia_subjectivity_score = Page.objects.get(id=2).subjectivity_score
 
         "unicode is used to synchronise the format"
         self.assertEqual(80.00,fever_flesch_score)
-        self.assertEqual(unicode(0.05),unicode(fever_sentiment_score))
+        self.assertEqual(unicode(0.05),unicode(fever_polarity_score))
         self.assertEqual(unicode(0.05),unicode(fever_subjectivity_score))
         self.assertEqual(90.00,insomnia_flesch_score)
-        self.assertEqual(unicode(-0.10),unicode(insomnia_sentiment_score))
+        self.assertEqual(unicode(-0.10),unicode(insomnia_polarity_score))
         self.assertEqual(unicode(-0.10),unicode(insomnia_subjectivity_score))

@@ -14,7 +14,7 @@ class PageForm(forms.ModelForm):
 	summary = forms.CharField(max_length = 128, help_text="Please enter the summary of the page.")
 	url = forms.URLField(max_length=200, help_text="Please enter the URL of the page.")
 	flesch_score = forms.DecimalField(widget=forms.HiddenInput(), initial = 0.00)
-	sentiment_score = forms.DecimalField(widget=forms.HiddenInput(), initial = 0.00)
+	polarity_score = forms.DecimalField(widget=forms.HiddenInput(), initial = 0.00)
 	subjectivity_score = forms.DecimalField(widget=forms.HiddenInput(), initial = 0.00)
 	
 	class Meta:

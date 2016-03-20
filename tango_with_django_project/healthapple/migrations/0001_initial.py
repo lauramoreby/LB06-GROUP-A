@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
                 ('summary', models.CharField(default=b'', max_length=128)),
                 ('url', models.URLField()),
                 ('flesch_score', models.DecimalField(default=0.0, max_digits=5, decimal_places=2)),
-                ('sentiment_score', models.DecimalField(default=0.0, max_digits=4, decimal_places=2)),
+                ('polarity_score', models.DecimalField(default=0.0, max_digits=4, decimal_places=2)),
                 ('subjectivity_score', models.DecimalField(default=0.0, max_digits=4, decimal_places=2)),
                 ('category', models.ForeignKey(to='healthapple.Category')),
             ],
@@ -52,7 +52,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='category',
             name='person',
-            field=models.ForeignKey(default=None, blank=True, to='healthapple.Person', null=True),
+            field=models.ForeignKey(to='healthapple.Person'),
             preserve_default=True,
         ),
     ]
