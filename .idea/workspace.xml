@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8614f4af-81ad-4152-a684-65d02eece078" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tango_with_django_project/db.sqlite3" afterPath="$PROJECT_DIR$/tango_with_django_project/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tango_with_django_project/static/javascript/jsIndex.js" afterPath="$PROJECT_DIR$/tango_with_django_project/static/javascript/jsIndex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tango_with_django_project/healthapple/urls.py" afterPath="$PROJECT_DIR$/tango_with_django_project/healthapple/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tango_with_django_project/healthapple/views.py" afterPath="$PROJECT_DIR$/tango_with_django_project/healthapple/views.py" />
     </list>
     <ignored path="LB06-GROUP-A.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,12 +25,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="jsIndex.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jsIndex.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tango_with_django_project/static/javascript/jsIndex.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.83725137">
+            <state vertical-scroll-proportion="-17.148148">
               <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tango_with_django_project/healthapple/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.8888888">
+              <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tango_with_django_project/healthapple/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.79310346">
+              <caret line="88" column="128" selection-start-line="88" selection-start-column="128" selection-end-line="88" selection-end-column="128" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,6 +79,8 @@
       <list>
         <option value="$PROJECT_DIR$/tango_with_django_project/templates/healthapple/index.html" />
         <option value="$PROJECT_DIR$/tango_with_django_project/static/javascript/jsIndex.js" />
+        <option value="$PROJECT_DIR$/tango_with_django_project/healthapple/urls.py" />
+        <option value="$PROJECT_DIR$/tango_with_django_project/healthapple/views.py" />
       </list>
     </option>
   </component>
@@ -479,6 +505,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/tango_with_django_project/static/javascript/jsIndex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.148148">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tango_with_django_project/templates/healthapple/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -487,11 +521,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tango_with_django_project/static/javascript/jsIndex.js">
+    <entry file="file://$PROJECT_DIR$/tango_with_django_project/healthapple/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83725137">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-3.8888888">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tango_with_django_project/healthapple/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79310346">
+          <caret line="88" column="128" selection-start-line="88" selection-start-column="128" selection-end-line="88" selection-end-column="128" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

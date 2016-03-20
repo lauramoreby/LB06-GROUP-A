@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from healthapple.forms import CategoryForm, PageForm, UserForm, PersonForm
 from healthapple.medline_api import run_query
 from django.http import HttpResponse
+import urllib2
 
 def index(request):
 
@@ -79,4 +80,12 @@ def search(request):
     else:
         return HttpResponse("Invalid")
 
-	
+def suggestion(request):
+    if request.method == 'GET':
+        query = request.GET.urlencode()[2:]
+        #make a request to that url + query. should be a function to make a http request
+        urllib2.urlopen("http://suggestqueries.google.com/complete/search?client=firefox&q=" + query).read()
+
+        return HttpResponse(urllib2.urlopen("http://suggestqueries.google.com/complete/search?client=firefox&q=" + query).read())
+    else:
+        return HttpResponse("Invalid")
