@@ -82,5 +82,8 @@ function search() {
 function input () {
   //function will get called every time a user types something into the search box
   var word = document.getElementById("clubSearch").value;
-  alert(word);
+
+  $.getJSON( "http://suggestqueries.google.com/complete/search?client=firefox&q="+word, function( data ) {
+    alert(data);
+});
 }
