@@ -17,7 +17,6 @@
         <input type="hidden" name="next" value="{{ next }}" />
 		
     </form>
-    <input  class="btn-flat waves-effect waves black-text right" type="submit" value="Register" />
     
 	
 </div>
@@ -27,7 +26,7 @@
 
 <div class = 'main_content_card shown' id = 'search_card'>
     <div class = 'inner_main_content_card'>
-      <div class = 'left'><br>No account? <a href = 'http://localhost:8000/healthapple/register'><i class="material-icons">person_add</i></a></div><br><br><br>
+      <div class = 'left'>No account?  </div><a href="{% url 'registration_register' %}" > <i class="material-icons right">person_add</i></a><br>
       
     </div>
 </div>
