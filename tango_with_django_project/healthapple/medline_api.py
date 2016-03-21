@@ -5,6 +5,8 @@ from textstat.textstat import textstat
 from textblob import TextBlob
 import xml.etree.ElementTree
 import xml2json
+import xml.etree.ElementTree as ET
+
 
 
 if __name__ == '__main__':
@@ -29,12 +31,14 @@ def run_query(search_terms):
         response = urllib2.urlopen(search_url).read()
 
         # Open file and write xml code to file to be parsed later on
-        print xml2json.xml2json(response)
 
 
 
         # Convert the string response to a Python dictionary object.
-        parse_response = xml.etree.ElementTree.parse("temp_xml.txt").getroot()
+        root = ET.fromstring(response)
+        for child in root:
+          print child.tag, child.attrib
+        
 
 
         # Loop through each page returned, populating out results list.

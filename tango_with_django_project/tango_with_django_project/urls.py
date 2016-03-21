@@ -14,8 +14,8 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 	url(r'^healthapple/',include('healthapple.urls')),
-	url(r'^healthapple/accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),
-	url(r'^healthapple/accounts/',include('registration.backends.simple.urls')),
+	url(r'^healthapple/register/$', MyRegistrationView.as_view(), name='registration_register'),
+	url(r'^healthapple/',include('registration.backends.simple.urls')),
 	
 )
 
