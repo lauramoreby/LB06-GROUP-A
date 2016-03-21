@@ -21,6 +21,29 @@ def user_profile(request):
 
 	return render(request, 'healthapple/user_profile.html', {})
 
+def create_profile(request):
+
+    user = request.user
+    
+    if request.method == 'POST':
+        
+        form = PersonForm(request.POST, request.FILES)
+        if form.is_valid():
+            person = form.save(commit=False)
+            person.user = user
+            if len(request.FILES)!=0:
+                person.picture = request.FILES['picture']
+            person.save()
+            return user_profile(request)
+        else:
+            print form.errors
+
+    else:
+        form = PersonForm()
+
+        # If the form or details are bad or no form was supplied, render the form with error messages (if there are any)
+    return render(request, "healthapple/create_profile.html", {'form': form})
+
 def add_category(request):
     try:
         person = Person.objects.get(user=request.user)
@@ -128,3 +151,4 @@ def suggestion(request):
         return HttpResponse()
     else:
         return HttpResponse("Invalid")
+

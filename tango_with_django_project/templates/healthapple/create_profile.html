@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} - create_profile{% endblock %}
+
+{% block body_block %}
+<div class = 'main_content_card shown' id = 'search_card'>
+    <div class = 'inner_main_content_card'>
+      
+	<form action="{% url 'create_profile' %}" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+			<h3>Press next to create a profile</h3>
+			{{form.as_p}}
+			
+			<button type="submit" name="submit" value="Next">Next</button>
+	</form>
+</div>
+</div>
+{% endblock %}
