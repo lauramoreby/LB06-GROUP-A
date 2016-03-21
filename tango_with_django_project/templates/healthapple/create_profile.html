@@ -6,11 +6,10 @@
 <div class = 'main_content_card shown' id = 'search_card'>
     <div class = 'inner_main_content_card'>
       
-	<form action="{% url 'create_profile' %}" method="post">
+	<form action="{% url 'create_profile' %}" enctype="multipart/form-data" method="post">
             {% csrf_token %}
-			 
 			<h3>Press next to create a profile</h3>
-			<input type="file" name="file_upload" />
+			{{form.as_p}}
 			
 			<button type="submit" name="submit" value="Upload">Upload</button>
 			<button type="submit" name="submit" value="Next">Next</button>

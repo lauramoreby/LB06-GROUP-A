@@ -24,15 +24,14 @@ def user_profile(request):
 def create_profile(request):
 
     user = request.user
-    # picture = request.user.picture
     
     if request.method == 'POST':
         
-        form = PersonForm(request.POST)
+        form = PersonForm(request.POST, request.FILES)
         if form.is_valid():
             person = form.save(commit=False)
             person.user = user
-            # person.picture = picture
+            person.picture = request.FILES['picture']
             person.save()
             return user_profile(request)
         else:
