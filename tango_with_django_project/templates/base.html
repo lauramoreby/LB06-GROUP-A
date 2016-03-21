@@ -20,13 +20,12 @@
       <div id = 'main_container'>
           <div id = 'top_bar_within'>
               <div id = 'top_bar_dynamic'>
-                  <a href="/healthapple/"><div id = 'title' > HealthApple</div></a>
-                  <a href="javascript:toTop()"><div id = 'goUp'><i class="waves-effect waves material-icons md-18 right">arrow_upward</i></div>
+                  <a href="/healthapple/"><div id = 'title'> HealthApple</div></a>
+                  <a href="javascript:toTop()"><div id = 'goUp'><i class="waves-effect waves material-icons md-18 right">arrow_upward</i></div></a>
                   <a href="javascript:getSearchFocus()"><div id = 'goUp'><i class="waves-effect waves material-icons md-18 right">search</i></div></a>
 				  <div id = 'goUp' class = 'waves-effect waves right login'>
 					{% if user.is_authenticated %}
 					<a  href="{% url 'user_profile' %}"class="btn-flat">{{ user.username }}</a>
-					<a href="{% url 'save_page' %}" class="btn-flat">SAVE PAGE</a>
 					{% else %}
 					<a href="{% url 'auth_login' %}" class="btn-flat">LOGIN</a>
 					{% endif %}

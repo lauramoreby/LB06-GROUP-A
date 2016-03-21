@@ -11,7 +11,7 @@ class Person(models.Model):
 class Category(models.Model):
 	# many to one relationship with user
 	
-	person = models.ForeignKey(Person)
+	person = models.ForeignKey(Person, default=None, null=True, blank=True)
 	name = models.CharField(max_length=128)
 		
 	def __unicode__(self):
@@ -19,7 +19,7 @@ class Category(models.Model):
 		
 class Page(models.Model):
 	# many to one relationship with Category
-	category = models.ForeignKey(Category)
+	category = models.ForeignKey(Category, default=None, null=True, blank=True)
 	title = models.CharField(max_length = 128)
 	summary = models.CharField(max_length = 128, default ="")
 	url = models.URLField()

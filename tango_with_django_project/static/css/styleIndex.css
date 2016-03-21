@@ -123,6 +123,12 @@ body {
     line-height: 4rem;
 }
 
+
+.title {
+  font-size: 1.2rem;
+  
+}
+
 #title {
     display: inline-block;
     position: absolute;
@@ -155,6 +161,8 @@ body {
         transform: translateY(0);
     }
 }
+
+.float-icon{display:inline-block;}
 
 
 .main_content_card {
@@ -235,7 +243,8 @@ t1 {
 }
 
 #spinner-hidden {display:none;}
-
+#spinner {}
+#dynamic-results-hidden {display:none;}
 
 #goUp {
     margin-right:-1rem;

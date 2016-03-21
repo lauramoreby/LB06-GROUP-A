@@ -6,14 +6,19 @@
 
 <div onload = "javascript:passChange()" class = 'main_content_card shown' id = 'search_card'>
     <div class = 'inner_main_content_card'>
-        <input class="form-control" type="text" oninput="javascript:input()" name="query" value="" id="clubSearch" />
+        <input class="form-control" type="text" oninput="javascript:input()" onkeydown='javascript:onButton(event.which || event.keyCode)' name="query" autofocus = 1 value="" id="clubSearch" />
         
         <input class="btn btn-primary waves-effect grey darken-3 waves" type="submit" name="submit" value="Search" onclick="javascript:search()" />
+
+
     </div>
+
     <div id = 'spinner-hidden'></div>
     <div id = 'spinner'></div>
     
-</div>
 
+</div><br>
+            <div id = 'dynamic-results-hidden'></div>
+        <div id = 'dynamic-results'></div>
 
 {% endblock %}
