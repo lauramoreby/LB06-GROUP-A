@@ -36,19 +36,23 @@ def run_query(search_terms):
                 subjectivity_score = sentence.sentiment.subjectivity
 
             url = ""
-            if type(result['MoreInfo'])== list:
-                url = result['MoreInfo'][0]['Url']
-            else:
-                url = result['MoreInfo']['Url']
-
-            results.append({
-            'title': result['Title'],
-            'link': url,
-            'summary': result['Contents'],
-            'flesch_score': '{0:.2f}'.format(textstat.flesch_reading_ease(result['Contents'])),
-            'polarity_score': '{0:.2f}'.format(polarity_score),
-            'subjectivity_score': '{0:.2f}'.format(subjectivity_score),
-            'source':'HealthFinder'})
+            try:
+              if type(result['MoreInfo'])== list:
+                  url = result['MoreInfo'][0]['Url']
+              else:
+                  url = result['MoreInfo']['Url']
+              if result['Url'][-1] == "/":
+                result['Url'] = result['Url'][:-1]
+              results.append({
+              'title': result['Title'],
+              'link': url,
+              'summary': result['Contents'],
+              'flesch_score': '{0:.2f}'.format(textstat.flesch_reading_ease(result['Contents'])),
+              'polarity_score': '{0:.2f}'.format(polarity_score),
+              'subjectivity_score': '{0:.2f}'.format(subjectivity_score),
+              'source':'HealthFinder'})
+            except:
+              continue
 
 
     # Catch a URLError exception - something went wrong when connecting!

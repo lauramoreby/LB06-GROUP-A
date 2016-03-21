@@ -68,7 +68,8 @@ def run_query(search_terms):
             for sentence in blob.sentences:
                 polarity_score = sentence.sentiment.polarity
                 subjectivity_score = sentence.sentiment.subjectivity
-                
+            if result['Url'][-1] == "/":
+              result['Url'] = result['Url'][:-1]
             results.append({
             'title': result['Title'],
             'link': result['Url'],

@@ -2,10 +2,16 @@ from django.shortcuts import render
 from healthapple.models import Category, Page, Person
 from django.contrib.auth.models import User
 from healthapple.forms import CategoryForm, PageForm, UserForm, PersonForm
-from healthapple.medline_api import run_query
+from healthapple.healthfinder_api import run_query as health
+from healthapple.bing_search import run_query as bing
 from django.http import HttpResponse
 import urllib2
 import ast
+import json
+import urllib2, base64 
+from multiprocessing.dummy import Pool as ThreadPool
+
+query = ''
 
 def index(request):
 
@@ -72,12 +78,35 @@ def save_page(request):
 
     return render(request, 'healthapple/save_page.html', {'form': form})
 
-	
+def api_handler(api_name):
+  global query
+  if api_name == 'bing':
+    return bing(query)
+  if api_name == 'health':
+    return health(query)
+
+def api_pool():
+  apis = [
+    'bing',
+    'health'
+    ]
+  pool = ThreadPool(2) 
+  results = pool.map(api_handler, apis)
+  pool.close() 
+  pool.join()
+  return results[0] + results[1]
+  
 def search(request):
+    global query
     if request.method == 'GET':
         query = request.GET.urlencode()[2:]
-        api_results = run_query(query)
-        return HttpResponse(api_results)
+        results = api_pool()
+        d = {}
+        i = 1
+        for item in results:
+          d[i] = item
+          i += 1
+        return HttpResponse(json.dumps(d))
     else:
         return HttpResponse("Invalid")
 
@@ -95,6 +124,6 @@ def suggestion(request):
             item = item.replace('"','')
             l += [{'suggestion':item}]
         d['result'] = l
-        return HttpResponse(d)
+        return HttpResponse()
     else:
         return HttpResponse("Invalid")

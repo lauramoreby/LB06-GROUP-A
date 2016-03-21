@@ -69,14 +69,29 @@ function passChange() {
 function search() {
   // put the content into a hidden div
   $('#spinner-hidden').html("<br><br><div class = 'spinner'><div class=\"preloader-wrapper big active\"> <div class=\"spinner-layer spinner-green-only\"> <div class=\"circle-clipper left\"> <div class=\"circle\"><\/div> <\/div><div class=\"gap-patch\"> <div class=\"circle\"><\/div> <\/div><div class=\"circle-clipper right\"> <div class=\"circle\"><\/div> <\/div> <\/div> <\/div></div>");
-
+  var query = document.getElementById("clubSearch").value;
   // get the target height
-  var newHeight = $('#spinner-hidden').height();
-  
+  var url = "http://127.0.0.1:8000/healthapple/healthapplesearchapi/?q=";
   // animate height and set content
-  $('#spinner').animate({'height': newHeight},"fast", function(){
-      $('#spinner').html($('#spinner-hidden').html());
-  });
+  var data = Get(url + query);
+  var obj = JSON.parse(data);
+  var results = "";
+  for (var item in obj){
+    var temp = "";
+    temp += "<div class = 'title'>" + obj[item]['title'] + "</div><br>";
+    temp += "<div class = 'title2'>" + obj[item]['summary'] + "</div>";
+    temp += "<div class = 'title2'>Flesch score: " + obj[item]['flesch_score'] + "</div>";
+    temp += "<div class = 'title2'>Polarity score: " + obj[item]['polarity_score'] + "</div>";
+    temp += "<div class = 'title2'>Subjectivity score: " + obj[item]['subjectivity_score'] + "</div>";
+    temp += "Source: " + obj[item]['source'] + "<br>";
+    temp += "<a class='waves-effect waves btn-flat right blue-text' href=" + String(obj[item]['link']) + ">Visit Page</a><br>";
+  //  temp += "<a href=" + obj[item]['link'] + "class='waves-effect waves btn-flat right'>Visit Page</a><br>";
+    results += createCard(temp);
+  }
+
+
+  $('#dynamic-results').html(results);
+
 }
 
 function input () {
@@ -84,6 +99,12 @@ function input () {
   var word = document.getElementById("clubSearch").value;
 
   $.getJSON( "http://suggestqueries.google.com/complete/search?client=firefox&q="+word, function( data ) {
-    alert(data);
 });
+}
+
+function Get(yourUrl) {
+    var Httpreq = new XMLHttpRequest();
+    Httpreq.open("GET",yourUrl,false);
+    Httpreq.send(null);
+    return Httpreq.responseText;
 }
