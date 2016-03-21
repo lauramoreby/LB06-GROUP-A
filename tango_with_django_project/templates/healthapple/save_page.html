@@ -8,7 +8,7 @@
 <div class = 'main_content_card shown' id = 'search_card'>
     <div class = 'inner_main_content_card'>
 
-        <form role="form"  id="page_form" method="post" action="/healthapple/save_page/">
+        <form role="form" onsubmit = "javascript:notificationEnabler('savedpage')" id="page_form" method="POST" action="/healthapple/save_page/">
                     {% csrf_token %}
                     {% for hidden in form.hidden_fields %}
                         {{ hidden }}

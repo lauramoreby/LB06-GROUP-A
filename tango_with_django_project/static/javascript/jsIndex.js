@@ -12,6 +12,12 @@ if (localStorage.getItem("newacc") == null) {
   localStorage.setItem("newacc", 'false');
 }
 
+if (localStorage.getItem("savedpage") == null) {
+  localStorage.setItem("savedpage", 'false');
+}
+
+var search_param = "";
+
 function onButton(code) {
       if (code == 13) {
           loseSearchFocus();
@@ -20,7 +26,19 @@ function onButton(code) {
       }
 }
 
+function type_fun(search_type) {
+  search_param = search_type;
+}
+
 function notificationDisplay() {
+  if (window.location.href.slice(-11) == '/save_page/') {
+    $('#id_url').val(localStorage.getItem("link"));
+    if (localStorage.getItem("savedpage") == 'true') {
+      window.history.pushState('Home', 'Healthapple', '/healthapple/');
+  //    window.location.href = '/healthapple';
+      
+    }
+  }
   if (localStorage.getItem("passChange") == 'true') {
     Materialize.toast('Password changed succesfully!', 4000, '');
     localStorage.setItem("passChange", 'false');
@@ -36,6 +54,10 @@ function notificationDisplay() {
   if (localStorage.getItem("newacc") == 'true') {
     Materialize.toast('Account created succesfully!', 4000, '');
     localStorage.setItem("newacc", 'false');
+  }
+  if (localStorage.getItem("savedpage") == 'true') {
+    Materialize.toast('Page saved succefully!', 4000, '');
+    localStorage.setItem("savedpage", 'false');
   }
 }
 
@@ -82,6 +104,11 @@ function passChange() {
   alert("Hi");
 }
 
+function save_page(link) {
+  localStorage.setItem("link", link);
+  window.location.href = 'save_page';
+}
+
 function search() {
   // put the content into a hidden div
   $('#spinner-hidden').html("<br><br><div class = 'spinner'><div class=\"preloader-wrapper big active\"> <div class=\"spinner-layer spinner-green-only\"> <div class=\"circle-clipper left\"> <div class=\"circle\"><\/div> <\/div><div class=\"gap-patch\"> <div class=\"circle\"><\/div> <\/div><div class=\"circle-clipper right\"> <div class=\"circle\"><\/div> <\/div> <\/div> <\/div></div>");
@@ -89,12 +116,12 @@ function search() {
   // get the target height
   var url = "http://127.0.0.1:8000/healthapple/healthapplesearchapi/?q=";
   // animate height and set content
-  var data = Get(url + query);
+  var data = Get(url + query + search_param);
   var obj = JSON.parse(data);
   var results = "";
   for (var item in obj){
     var temp = "";
-    temp += "<div class = 'title'>" + obj[item]['title'] + "<a href='save_page'><i class='material-icons right float-icon'>add</i></a> </div><br>";
+    temp += "<div class = 'title'>" + obj[item]['title'] + "<a href='javascript:save_page(\"" + obj[item]['link'] + "\")'><i class='material-icons right float-icon'>add</i></a> </div><br>";
     temp += "<div class = 'title2'>" + obj[item]['summary'] + "</div>";
     temp += "<div class = 'title2'>Flesch score: " + obj[item]['flesch_score'] + "</div>";
     temp += "<div class = 'title2'>Polarity score: " + obj[item]['polarity_score'] + "</div>";
@@ -110,6 +137,8 @@ function search() {
   $('.result_card').hide().show(0);
 
 }
+
+
 
 function input () {
   //function will get called every time a user types something into the search box

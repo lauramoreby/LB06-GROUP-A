@@ -82,14 +82,17 @@ def save_page(request):
         # show lists of categories the user have
         person = Person.objects.get(user=request.user)
         cat = Category.objects.filter(person=person)
-        print cat
+        
     except Category.DoesNotExist:
         cat = None
 
     if request.method == 'POST':
         form = PageForm(request.POST)
+        print form.is_valid()
         if form.is_valid():
             page = form.save(commit=False)
+            print cat
+          
             page.save()
 
             # probably better to use a redirect here.
