@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Person(models.Model):
 	user = models.OneToOneField(User)
-	picture = models.ImageField(upload_to='profile_images', blank = True)
+	picture = models.ImageField(upload_to='profile_images',blank = True)
 	
 	def __unicode__(self):
 		return self.user.username
