@@ -24,12 +24,15 @@ def run_query(search_terms):
     try:
         # Connect to the server and read the response generated.
         response = urllib2.urlopen(search_url).read()
-
+        
         # Convert the string response to a Python dictionary object.
         json_response = json.loads(response)
-
+        if 'Tools' not in json_response["Result"]:
+            return []
+        
         # Loop through each page returned, populating out results list.
         for result in json_response["Result"]["Tools"]:
+            
             blob = TextBlob(result['Contents'])
             for sentence in blob.sentences:
                 polarity_score = sentence.sentiment.polarity
@@ -37,6 +40,7 @@ def run_query(search_terms):
 
             url = ""
             try:
+              
               if type(result['MoreInfo'])== list:
                   url = result['MoreInfo'][0]['Url']
               else:
