@@ -8,8 +8,12 @@
       
 	<form action="{% url 'create_profile' %}" method="post">
             {% csrf_token %}
+			 
+			<h3>Press next to create a profile</h3>
+			<input type="file" name="file_upload" />
 			
-			<button type="submit">Next</button>
+			<button type="submit" name="submit" value="Upload">Upload</button>
+			<button type="submit" name="submit" value="Next">Next</button>
 	</form>
 </div>
 </div>
