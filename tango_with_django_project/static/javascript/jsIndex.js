@@ -8,6 +8,10 @@ if (localStorage.getItem("logout") == null) {
   localStorage.setItem("logout", 'false');
 }
 
+if (localStorage.getItem("newacc") == null) {
+  localStorage.setItem("newacc", 'false');
+}
+
 function onButton(code) {
       if (code == 13) {
           loseSearchFocus();
@@ -28,6 +32,10 @@ function notificationDisplay() {
   if (localStorage.getItem("logout") == 'true') {
     Materialize.toast('You are now logged out!', 4000, '');
     localStorage.setItem("logout", 'false');
+  }
+  if (localStorage.getItem("newacc") == 'true') {
+    Materialize.toast('Account created succesfully!', 4000, '');
+    localStorage.setItem("newacc", 'false');
   }
 }
 
@@ -86,7 +94,7 @@ function search() {
   var results = "";
   for (var item in obj){
     var temp = "";
-    temp += "<div class = 'title'>" + obj[item]['title'] + "</div><br>";
+    temp += "<div class = 'title'>" + obj[item]['title'] + "<a href='save_page'><i class='material-icons right float-icon'>add</i></a> </div><br>";
     temp += "<div class = 'title2'>" + obj[item]['summary'] + "</div>";
     temp += "<div class = 'title2'>Flesch score: " + obj[item]['flesch_score'] + "</div>";
     temp += "<div class = 'title2'>Polarity score: " + obj[item]['polarity_score'] + "</div>";

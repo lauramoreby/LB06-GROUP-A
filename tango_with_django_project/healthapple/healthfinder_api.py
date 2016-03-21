@@ -34,7 +34,6 @@ def run_query(search_terms):
             for sentence in blob.sentences:
                 polarity_score = sentence.sentiment.polarity
                 subjectivity_score = sentence.sentiment.subjectivity
-            print result
 
             url = ""
             try:
@@ -45,11 +44,13 @@ def run_query(search_terms):
 
               if url.endswith('/'):
                   url = url[:-1]
-                  
+              adder = ""
+              if len(result['Contents']) > 400:
+                adder = "..."
               results.append({
               'title': result['Title'],
               'link': url,
-              'summary': result['Contents'],
+              'summary': result['Contents'][:400] + adder,
               'flesch_score': '{0:.2f}'.format(textstat.flesch_reading_ease(result['Contents'])),
               'polarity_score': '{0:.2f}'.format(polarity_score),
               'subjectivity_score': '{0:.2f}'.format(subjectivity_score),
@@ -63,6 +64,5 @@ def run_query(search_terms):
         print "Error when querying the HealthFinder API: ", e
 
     # Return the list of results to the calling function.
-    print results
     return results
 
