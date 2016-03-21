@@ -24,23 +24,35 @@ def run_query(search_terms):
     try:
         # Connect to the server and read the response generated.
         response = urllib2.urlopen(search_url).read()
-
+        
         # Convert the string response to a Python dictionary object.
         json_response = json.loads(response)
-
+        if 'Tools' not in json_response["Result"]:
+            return []
+        
         # Loop through each page returned, populating out results list.
         for result in json_response["Result"]["Tools"]:
+            
             blob = TextBlob(result['Contents'])
             for sentence in blob.sentences:
                 polarity_score = sentence.sentiment.polarity
                 subjectivity_score = sentence.sentiment.subjectivity
+            print result
 
             url = ""
             try:
+              
               if type(result['MoreInfo'])== list:
                   url = result['MoreInfo'][0]['Url']
               else:
                   url = result['MoreInfo']['Url']
+<<<<<<< HEAD
+=======
+
+              if url.endswith('/'):
+                  url = url[:-1]
+                  
+>>>>>>> 12b03fbb961b3dd0ac8349bf83981750814bc14b
               results.append({
               'title': result['Title'],
               'link': url,
@@ -58,5 +70,6 @@ def run_query(search_terms):
         print "Error when querying the HealthFinder API: ", e
 
     # Return the list of results to the calling function.
+    print results
     return results
 

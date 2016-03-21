@@ -103,6 +103,7 @@ def search(request):
         api_results = run_query(query)
         return HttpResponse(api_results)
     else:
+        print "Failed in views.py"
         return HttpResponse("Invalid")
 
 def suggestion(request):
