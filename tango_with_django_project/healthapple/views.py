@@ -31,6 +31,8 @@ def create_profile(request):
         if form.is_valid():
             person = form.save(commit=False)
             person.user = user
+            # if user does not choose any photo, just proceed
+            # else, save that picture
             if len(request.FILES)!=0:
                 person.picture = request.FILES['picture']
             person.save()
