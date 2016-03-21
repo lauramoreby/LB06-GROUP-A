@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} - create_profile{% endblock %}
+
+{% block body_block %}
+<div class = 'main_content_card shown' id = 'search_card'>
+    <div class = 'inner_main_content_card'>
+      
+	<form action="{% url 'create_profile' %}" method="post">
+            {% csrf_token %}
+			
+			
+	</form>
+</div>
+</div>
+{% endblock %}

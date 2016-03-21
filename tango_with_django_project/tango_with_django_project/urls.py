@@ -5,7 +5,7 @@ from django.contrib import admin
 
 class MyRegistrationView(RegistrationView):
     def get_success_url(self,request):
-        return '/healthapple/'
+        return "/healthapple/create_profile/"
 		
 urlpatterns = patterns('',
     # Examples:
