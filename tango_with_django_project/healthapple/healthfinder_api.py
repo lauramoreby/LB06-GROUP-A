@@ -41,8 +41,6 @@ def run_query(search_terms):
                   url = result['MoreInfo'][0]['Url']
               else:
                   url = result['MoreInfo']['Url']
-              if result['Url'][-1] == "/":
-                result['Url'] = result['Url'][:-1]
               results.append({
               'title': result['Title'],
               'link': url,
