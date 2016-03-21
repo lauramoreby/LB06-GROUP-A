@@ -2,8 +2,9 @@ from django.shortcuts import render
 from healthapple.models import Category, Page, Person
 from django.contrib.auth.models import User
 from healthapple.forms import CategoryForm, PageForm, UserForm, PersonForm
-from healthapple.healthfinder_api import run_query as health
-from healthapple.bing_search import run_query as bing
+#from healthapple.healthfinder_api import run_query as health
+#from healthapple.bing_search import run_query as bing
+from medline_api import run_query
 from django.http import HttpResponse
 import urllib2
 import ast
@@ -78,35 +79,29 @@ def save_page(request):
 
     return render(request, 'healthapple/save_page.html', {'form': form})
 
-def api_handler(api_name):
-  global query
-  if api_name == 'bing':
-    return bing(query)
-  if api_name == 'health':
-    return health(query)
-
-def api_pool():
-  apis = [
-    'bing',
-    'health'
-    ]
-  pool = ThreadPool(2) 
-  results = pool.map(api_handler, apis)
-  pool.close() 
-  pool.join()
-  return results[1] + results[0]
+# def api_handler(api_name):
+#   global query
+#   if api_name == 'bing':
+#     return bing(query)
+#   if api_name == 'health':
+#     return health(query)
+#
+# def api_pool():
+#   apis = [
+#     'bing',
+#     'health'
+#     ]
+#   pool = ThreadPool(2)
+#   results = pool.map(api_handler, apis)
+#   pool.close()
+#   pool.join()
+#   return results[0] + results[1]
   
 def search(request):
-    global query
     if request.method == 'GET':
         query = request.GET.urlencode()[2:]
-        results = api_pool()
-        d = {}
-        i = 1
-        for item in results:
-          d[i] = item
-          i += 1
-        return HttpResponse(json.dumps(d))
+        api_results = run_query(query)
+        return HttpResponse(api_results)
     else:
         print "Failed in views.py"
         return HttpResponse("Invalid")
