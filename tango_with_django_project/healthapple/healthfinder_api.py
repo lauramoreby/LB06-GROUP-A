@@ -37,6 +37,7 @@ def run_query(search_terms):
             for sentence in blob.sentences:
                 polarity_score = sentence.sentiment.polarity
                 subjectivity_score = sentence.sentiment.subjectivity
+            print result
 
             url = ""
             try:
@@ -66,5 +67,6 @@ def run_query(search_terms):
         print "Error when querying the HealthFinder API: ", e
 
     # Return the list of results to the calling function.
+    print results
     return results
 

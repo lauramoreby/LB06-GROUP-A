@@ -108,6 +108,7 @@ def search(request):
           i += 1
         return HttpResponse(json.dumps(d))
     else:
+        print "Failed in views.py"
         return HttpResponse("Invalid")
 
 def suggestion(request):

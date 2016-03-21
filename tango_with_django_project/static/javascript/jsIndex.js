@@ -8,6 +8,14 @@ if (localStorage.getItem("logout") == null) {
   localStorage.setItem("logout", 'false');
 }
 
+function onButton(code) {
+      if (code == 13) {
+          loseSearchFocus();
+          search();
+          
+      }
+}
+
 function notificationDisplay() {
   if (localStorage.getItem("passChange") == 'true') {
     Materialize.toast('Password changed succesfully!', 4000, '');
@@ -63,7 +71,7 @@ var topBarShadow = {
 };
 
 function passChange() {
-	$('.error').fadeIn(400).delay(3000).fadeOut(400); //fade out after 3 seconds
+  alert("Hi");
 }
 
 function search() {
@@ -91,6 +99,7 @@ function search() {
 
 
   $('#dynamic-results').html(results);
+  $('.result_card').hide().show(0);
 
 }
 
@@ -98,8 +107,8 @@ function input () {
   //function will get called every time a user types something into the search box
   var word = document.getElementById("clubSearch").value;
 
-  $.getJSON( "http://suggestqueries.google.com/complete/search?client=firefox&q="+word, function( data ) {
-});
+//  $.getJSON( "http://suggestqueries.google.com/complete/search?client=firefox&q="+word, function( data ) {
+//});
 }
 
 function Get(yourUrl) {
