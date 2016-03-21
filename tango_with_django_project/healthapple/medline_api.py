@@ -7,6 +7,7 @@ import xml.etree.ElementTree
 import xml2json
 import xml.etree.ElementTree as ET
 import sys
+from xml.dom import minidom
 from bs4 import BeautifulSoup as Soup
 
 
@@ -31,17 +32,20 @@ def run_query(search_terms):
     try:
         # Connect to the server and read the response generated.
         response = urllib2.urlopen(search_url).read()
+        
 
         # Open file and write xml code to file to be parsed later on
-        soup = Soup(response)
-        soup.prettify()
-        f = open('xml.txt','w')
-        f.write(soup.prettify().encode('utf-8').strip())
-        f.close()
-        print soup.title
-        
-        
-
+        # soup = Soup(response)
+        # soup.prettify()
+        # f = open('xml.xml','w')
+        # f.write(soup.prettify().encode('utf-8').strip())
+        # f.close()
+        # print soup.content
+        root = xml.dom.minidom.parseString(response)
+        print root
+        resultset = root.getElementsByTagNameNS('title','url')
+        print resultset
+        return resultset
 
         # Loop through each page returned, populating out results list.
         for result in parse_response:
@@ -62,7 +66,7 @@ def run_query(search_terms):
 
     # Catch a URLError exception - something went wrong when connecting!
     except urllib2.URLError as e:
-        print "Error when querying the Bing API: ", e
+        print "Error when querying the MedlinePlus API: ", e
 
     # Return the list of results to the calling function.
     return results
