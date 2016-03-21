@@ -45,29 +45,24 @@ def run_query(search_terms):
                   url = result['MoreInfo'][0]['Url']
               else:
                   url = result['MoreInfo']['Url']
-<<<<<<< HEAD
-=======
 
               if url.endswith('/'):
                   url = url[:-1]
-<<<<<<< HEAD
+
               adder = ""
               if len(result['Contents']) > 400:
                 adder = "..."
-=======
-                  
->>>>>>> 12b03fbb961b3dd0ac8349bf83981750814bc14b
->>>>>>> 37a75dfdc0a9875ca59d4e09e2bc71bdf9313f92
+
               results.append({
-              'title': result['Title'],
-              'link': url,
-              'summary': result['Contents'][:400] + adder,
-              'flesch_score': '{0:.2f}'.format(textstat.flesch_reading_ease(result['Contents'])),
-              'polarity_score': '{0:.2f}'.format(polarity_score),
-              'subjectivity_score': '{0:.2f}'.format(subjectivity_score),
-              'source':'HealthFinder'})
+                'title': result['Title'],
+                'link': url,
+                'summary': result['Contents'][:400] + adder,
+                'flesch_score': '{0:.2f}'.format(textstat.flesch_reading_ease(result['Contents'])),
+                'polarity_score': '{0:.2f}'.format(polarity_score),
+                'subjectivity_score': '{0:.2f}'.format(subjectivity_score),
+                'source':'HealthFinder'})
             except:
-              continue
+                continue
 
 
     # Catch a URLError exception - something went wrong when connecting!
