@@ -94,7 +94,7 @@ def api_pool():
   results = pool.map(api_handler, apis)
   pool.close() 
   pool.join()
-  return results[0] + results[1]
+  return results[1] + results[0]
   
 def search(request):
     global query
