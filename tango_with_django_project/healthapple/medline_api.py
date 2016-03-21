@@ -34,7 +34,14 @@ def run_query(search_terms):
 
         # Open file and write xml code to file to be parsed later on
         soup = Soup(response)
-        print soup.prettify()
+        soup.prettify()
+        f = open('xml.txt','w')
+        f.write(soup.prettify().encode('utf-8').strip())
+        f.close()
+        print soup.title
+        
+        
+
 
         # Loop through each page returned, populating out results list.
         for result in parse_response:
