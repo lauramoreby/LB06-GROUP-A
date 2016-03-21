@@ -6,6 +6,8 @@ from textblob import TextBlob
 import xml.etree.ElementTree
 import xml2json
 import xml.etree.ElementTree as ET
+import sys
+from bs4 import BeautifulSoup as Soup
 
 
 
@@ -31,15 +33,8 @@ def run_query(search_terms):
         response = urllib2.urlopen(search_url).read()
 
         # Open file and write xml code to file to be parsed later on
-
-
-
-        # Convert the string response to a Python dictionary object.
-        root = ET.fromstring(response)
-        for child in root:
-          print child.tag, child.attrib
-        
-
+        soup = Soup(response)
+        print soup.prettify()
 
         # Loop through each page returned, populating out results list.
         for result in parse_response:
