@@ -122,7 +122,7 @@ def save_page(request):
         print form.is_valid()
         if form.is_valid():
             page = form.save(commit=False)
-            page.cat = category_list[0]
+            page.category = category_list[0]
             page.save()
 
             # probably better to use a redirect here.
