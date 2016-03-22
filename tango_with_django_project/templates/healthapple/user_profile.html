@@ -30,8 +30,7 @@
                 {% endif %}
 
 	{% endfor %}
-    {% else %}
-        The specified category does not exist!
+    
     {% endif %}
 	
 		  	<a onclick = "javascript:notificationEnabler('logout')" href="{% url 'auth_logout' %}?next=/healthapple/" class="waves-effect waves btn-primary btn-flat black-text">Logout</a>

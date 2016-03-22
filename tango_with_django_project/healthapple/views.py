@@ -27,15 +27,19 @@ def user_profile(request):
         # So the .get() method returns one model instance or raises an exception.
         person = Person.objects.get(user=request.user)
         category = Category.objects.filter(person=person)
-        category_list = []
-        for cat in category:
-            category_list.append(cat)
         
-        # Retrieve all of the associated pages.
-        pages = Page.objects.filter(category=category)
-
+        category_list = []
+        if len(category) != 0:
+            for cat in category:
+                category_list.append(cat)
+        
+            # Retrieve all of the associated pages.
+            pages = Page.objects.filter(category=category)
+            context_dict['pages'] = pages
+        else:
+            pass
         # Adds our results list to the template context under name pages.
-        context_dict['pages'] = pages
+        
         # We also add the category object from the database to the context dictionary.
         # We'll use this in the template to verify that the category exists.
         context_dict['category'] = category_list
