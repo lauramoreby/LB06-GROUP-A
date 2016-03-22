@@ -18,8 +18,34 @@ def index(request):
     return render(request, 'healthapple/index.html', {})
 
 def user_profile(request):
+    # Create a context dictionary which we can pass to the template rendering engine.
+    context_dict = {}
 
-	return render(request, 'healthapple/user_profile.html', {})
+    try:
+        # Can we find a category name slug with the given name?
+        # If we can't, the .get() method raises a DoesNotExist exception.
+        # So the .get() method returns one model instance or raises an exception.
+        person = Person.objects.get(user=request.user)
+        category = Category.objects.filter(person=person)
+        category_list = []
+        for cat in category:
+            category_list.append(cat)
+        
+        # Retrieve all of the associated pages.
+        pages = Page.objects.filter(category=category)
+
+        # Adds our results list to the template context under name pages.
+        context_dict['pages'] = pages
+        # We also add the category object from the database to the context dictionary.
+        # We'll use this in the template to verify that the category exists.
+        context_dict['category'] = category_list
+    except Category.DoesNotExist:
+        # We get here if we didn't find the specified category.
+        # Don't do anything - the template displays the "no category" message for us.
+        pass
+
+    # Go render the response and return it to the client.
+    return render(request, 'healthapple/user_profile.html', context_dict)
 
 def create_profile(request):
 
@@ -84,7 +110,10 @@ def save_page(request):
         # show lists of categories the user have
         person = Person.objects.get(user=request.user)
         cat = Category.objects.filter(person=person)
-        
+        category_list = []
+        for cat in cat:
+            category_list.append(cat)
+            
     except Category.DoesNotExist:
         cat = None
 
@@ -93,8 +122,7 @@ def save_page(request):
         print form.is_valid()
         if form.is_valid():
             page = form.save(commit=False)
-            print cat
-          
+            page.cat = category_list[0]
             page.save()
 
             # probably better to use a redirect here.
@@ -103,8 +131,8 @@ def save_page(request):
             print form.errors
     else:
         form = PageForm()
-
-    return render(request, 'healthapple/save_page.html', {'form': form})
+    
+    return render(request, 'healthapple/save_page.html', {'form': form, 'category': category_list[0]})
 
 def api_handler(api_name):
   global query

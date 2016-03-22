@@ -10,6 +10,9 @@
 
         <form role="form" onsubmit = "javascript:notificationEnabler('savedpage')" id="page_form" method="POST" action="/healthapple/save_page/">
                     {% csrf_token %}
+					
+					<p>Add page to {{category}}</p>
+					
                     {% for hidden in form.hidden_fields %}
                         {{ hidden }}
                     {% endfor %}
