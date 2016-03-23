@@ -120,13 +120,16 @@ def save_page(request):
             
     except Category.DoesNotExist:
         cat = None
-
+    context_dict = {}
+    
     if request.method == 'POST':
         form = PageForm(request.POST)
         print form.is_valid()
         if form.is_valid():
             page = form.save(commit=False)
-            page.category = category_list[0]
+            if len(category_list)!= 0:
+                page.category = category_list[0]
+                context_dict['category']=category_list[0]
             page.save()
 
             # probably better to use a redirect here.
@@ -135,8 +138,10 @@ def save_page(request):
             print form.errors
     else:
         form = PageForm()
+
+    context_dict['form']=form
     
-    return render(request, 'healthapple/save_page.html', {'form': form, 'category': category_list[0]})
+    return render(request, 'healthapple/save_page.html', context_dict)
 
 def api_handler(api_name):
   global query
