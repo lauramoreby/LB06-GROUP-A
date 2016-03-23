@@ -25,6 +25,7 @@ def user_profile(request):
         # Can we find a category name slug with the given name?
         # If we can't, the .get() method raises a DoesNotExist exception.
         # So the .get() method returns one model instance or raises an exception.
+        
         person = Person.objects.get(user=request.user)
         category = Category.objects.filter(person=person)
         
@@ -120,6 +121,7 @@ def save_page(request):
             
     except Category.DoesNotExist:
         cat = None
+        
     context_dict = {}
     
     if request.method == 'POST':

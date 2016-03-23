@@ -22,6 +22,7 @@ def populate():
 	jill_person = add_person('jill')
 	jim_person = add_person('jim')
 	joe_person = add_person('joe')
+	admin_person = add_person('admin')
 
 	print "populating Category,Pages and Person entities"
 	
