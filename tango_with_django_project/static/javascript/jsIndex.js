@@ -35,8 +35,6 @@ function notificationDisplay() {
     $('#id_url').val(localStorage.getItem("link"));
     if (localStorage.getItem("savedpage") == 'true') {
       window.history.pushState('Home', 'Healthapple', '/healthapple/');
-  //    window.location.href = '/healthapple';
-      
     }
   }
   if (localStorage.getItem("passChange") == 'true') {
@@ -110,32 +108,31 @@ function save_page(link) {
 }
 
 function search() {
+  $('#dynamic-results').html("");
   // put the content into a hidden div
-  $('#spinner-hidden').html("<br><br><div class = 'spinner'><div class=\"preloader-wrapper big active\"> <div class=\"spinner-layer spinner-green-only\"> <div class=\"circle-clipper left\"> <div class=\"circle\"><\/div> <\/div><div class=\"gap-patch\"> <div class=\"circle\"><\/div> <\/div><div class=\"circle-clipper right\"> <div class=\"circle\"><\/div> <\/div> <\/div> <\/div></div>");
+  $('#spinner-hidden').show();
   var query = document.getElementById("clubSearch").value;
-  // get the target height
   var url = "http://127.0.0.1:8000/healthapple/healthapplesearchapi/?q=";
-  // animate height and set content
-  var data = Get(url + query + search_param);
-  var obj = JSON.parse(data);
+  Get(url + query + search_param);
+}
+
+function get_and_show_results(result){
+  var obj = JSON.parse(result);
   var results = "";
+  $('#spinner-hidden').hide();
   for (var item in obj){
     var temp = "";
     temp += "<div class = 'title'>" + obj[item]['title'] + "<a href='javascript:save_page(\"" + obj[item]['link'] + "\")'><i class='material-icons right float-icon'>add</i></a> </div><br>";
-    temp += "<div class = 'title2'>" + obj[item]['summary'] + "</div>";
-    temp += "<div class = 'title2'>Flesch score: " + obj[item]['flesch_score'] + "</div>";
+    temp += "<div class = 'title2'>" + obj[item]['summary'] + "</div>"; 
+    temp += "<div class = 'title2'><a href=\"javascript:openModal('#flesch-modal')\">Flesch score: </a>" + obj[item]['flesch_score'] + "</div>";
     temp += "<div class = 'title2'>Polarity score: " + obj[item]['polarity_score'] + "</div>";
     temp += "<div class = 'title2'>Subjectivity score: " + obj[item]['subjectivity_score'] + "</div>";
     temp += "Source: " + obj[item]['source'] + "<br>";
     temp += "<a class='waves-effect waves btn-flat right blue-text' href=" + String(obj[item]['link']) + ">Visit Page</a><br>";
-  //  temp += "<a href=" + obj[item]['link'] + "class='waves-effect waves btn-flat right'>Visit Page</a><br>";
     results += createCard(temp);
   }
-
-
   $('#dynamic-results').html(results);
   $('.result_card').hide().show(0);
-
 }
 
 
@@ -149,8 +146,16 @@ function input () {
 }
 
 function Get(yourUrl) {
-    var Httpreq = new XMLHttpRequest();
-    Httpreq.open("GET",yourUrl,false);
-    Httpreq.send(null);
-    return Httpreq.responseText;
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      get_and_show_results(xhttp.responseText);
+    }
+  };
+  xhttp.open("GET", yourUrl, true);
+  xhttp.send();
+}
+
+function openModal(id) {
+  $(id).openModal();
 }

@@ -78,7 +78,7 @@ body {
 
 .spinner {
   margin-top: 2rem;
-  margin-bottom: 6rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -243,7 +243,6 @@ t1 {
 }
 
 #spinner-hidden {display:none;}
-#spinner {}
 #dynamic-results-hidden {display:none;}
 
 #goUp {

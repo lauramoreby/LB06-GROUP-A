@@ -12,10 +12,7 @@
         <div class = "details-only">
 		  	<i class="material-icons profile">person</i>{{ user.username |title }}<br>
 		  	<i class="material-icons profile">email</i>{{ user.email |upper }}<br>
-		  	<br>
-	
-	</div>
-	{% if category %}
+		{% if category %}
 	{% for cat in category %}
         {% if pages %}
         <ul>	
@@ -26,12 +23,14 @@
                 {% endfor %}
                 </ul>
         {% else %}
-                <strong>No pages currently in category.</strong>
+                >No pages currently in category.
                 {% endif %}
 
 	{% endfor %}
     
     {% endif %}
+	</div>
+
 	
 		  	<a onclick = "javascript:notificationEnabler('logout')" href="{% url 'auth_logout' %}?next=/healthapple/" class="waves-effect waves btn-primary btn-flat black-text">Logout</a>
 			  <a href="{% url 'auth_password_change' %}" class="waves-effect waves btn-flat btn-primary black-text">Change Password</a>

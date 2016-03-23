@@ -4,23 +4,63 @@
 
 {% block body_block %}
 
-<div onload = "javascript:passChange()" class = 'main_content_card shown' id = 'search_card'>
-    <div class = 'inner_main_content_card'>
-        <input class="form-control" type="text" oninput="javascript:input()" onkeydown='javascript:onButton(event.which || event.keyCode)' name="query" autofocus = 1 value="" id="clubSearch" />
-        
-        <input class="btn btn-primary waves-effect green accent-3 waves" type="submit" name="submit" value="Search" onclick="javascript:search()" />
-        <input class="btn btn-primary waves-effect waves-teal btn-flat green-text" type="submit" name="submit" value="Condition" onclick="javascript:type_fun('Condition')" />
-        <input class="btn btn-primary waves-effect waves-teal btn-flat green-text" type="submit" name="submit" value="Medicine" onclick="javascript:type_fun('Medicine')" />
-        <input class="btn btn-primary waves-effect waves-teal btn-flat green-text" type="submit" name="submit" value="Treatment" onclick="javascript:type_fun('Treatment')" />
+  <div onload = "javascript:passChange()" class = 'main_content_card shown' id = 'search_card'>
+      <div class = 'inner_main_content_card'>
+          <input class="form-control" type="text" oninput="javascript:input()" onkeydown='javascript:onButton(event.which || event.keyCode)' name="query" autofocus = 1 value="" id="clubSearch" />
+          
+          <input class="btn btn-primary waves-effect grey darken-3 waves" type="submit" name="submit" value="Search" onclick="javascript:search()" />
+          <input class="waves-effect waves btn-flat btn-primary black-text" type="submit" name="submit" value="Condition" onclick="javascript:type_fun('Condition')" />
+          <input class="waves-effect waves btn-flat btn-primary black-text" type="submit" name="submit" value="Medicine" onclick="javascript:type_fun('Medicine')" />
+          <input class="waves-effect waves btn-flat btn-primary black-text" type="submit" name="submit" value="Treatment" onclick="javascript:type_fun('Treatment')" />
+  
+      </div>
+      <div id = 'inset_form'></div>
+  </div>
+  <br>
+  <div id = 'spinner-hidden'><div class = 'main_content_card result_card'><div class = 'inner_main_content_card'><div class = 'spinner'><div class="preloader-wrapper big active"> <div class="spinner-layer spinner-green-only"> <div class="circle-clipper left"> <div class="circle"></div> </div><div class="gap-patch"> <div class="circle"></div> </div><div class="circle-clipper right"> <div class="circle"></div> </div> </div> </div></div></div></div></div>
+  <div id = 'dynamic-results-hidden'></div>
+  <div id = 'dynamic-results'></div>
 
+  
+    <!-- Modal Structure -->
+  <div id="flesch-modal" class="modal">
+    <div class="modal-content">
+      <h4>Flesch Scores</h4>
+      <br>
+      <p>
+        Flesch reading ease measures textual difficulty of a reading passage in English (note: in languages other than English, Flesch is seriously unreliable). The lower the score, the more difficult the text is. The Flesch readability score uses the sentence length (number of words per sentence) and the number of syllables per word in an equation to calculate the reading ease. Texts with a very high Flesch reading Ease score (about 100) are very easy to read, have short sentences and no words of more than two syllables. Usually, a reading ease of 60-70 is believed to be acceptable/ normal for web texts.
+      </p>
+      
     </div>
-    <div id = 'inset_form'></div>
-    <div id = 'spinner-hidden'></div>
-    <div id = 'spinner'></div>
-    
-
-</div><br>
-            <div id = 'dynamic-results-hidden'></div>
-        <div id = 'dynamic-results'></div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect black-text waves-green btn-flat">Cool, Thanks!</a>
+    </div>
+  </div>
+  
+  <div id="polarity-modal" class="modal">
+    <div class="modal-content">
+      <h4>Polarity Scores</h4>
+      <p>
+        Flesch reading ease measures textual difficulty of a reading passage in English (note: in languages other than English, Flesch is seriously unreliable). The lower the score, the more difficult the text is. The Flesch readability score uses the sentence length (number of words per sentence) and the number of syllables per word in an equation to calculate the reading ease. Texts with a very high Flesch reading Ease score (about 100) are very easy to read, have short sentences and no words of more than two syllables. Usually, a reading ease of 60-70 is believed to be acceptable/ normal for web texts.
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect black-text waves-green btn-flat">Cool, Thanks!</a>
+    </div>
+  </div>
+  
+  <div id="subjectivity-modal" class="modal">
+    <div class="modal-content">
+      <h4>Subjectivity Scores</h4>
+      <p>
+        Flesch reading ease measures textual difficulty of a reading passage in English (note: in languages other than English, Flesch is seriously unreliable). The lower the score, the more difficult the text is. The Flesch readability score uses the sentence length (number of words per sentence) and the number of syllables per word in an equation to calculate the reading ease. Texts with a very high Flesch reading Ease score (about 100) are very easy to read, have short sentences and no words of more than two syllables. Usually, a reading ease of 60-70 is believed to be acceptable/ normal for web texts.
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect black-text waves-green btn-flat">Cool, Thanks!</a>
+    </div>
+  </div>
+  
+  
 
 {% endblock %}
