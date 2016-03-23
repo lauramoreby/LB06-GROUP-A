@@ -9,6 +9,7 @@ into different folders. The application lets people search across two different 
 the general web (bing). People using the application would like to self-diagnose, i.e. given some symptoms find out what are the likely conditions. They would also like to find out information about particular conditions, treatments and medicines. The application should help the users understand if the information is easy to read, is loaded with sentiment and subjectivity.
 
 ####Installation
+The url for the deployed application is http://bartekxx12.pythonanywhere.com/healthapple
 First, you will have to git clone the repo into any directory you like by typing git clone https://github.com/lauramoreby/LB06-GROUP-A.git
 
 You will then have to makemigrations to create the database and migrate to apply the database. This can be done by typing python manage.py makemigrations followed by python manage.py migrate
