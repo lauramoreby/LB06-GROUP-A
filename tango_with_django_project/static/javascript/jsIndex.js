@@ -112,7 +112,7 @@ function search() {
   // put the content into a hidden div
   $('#spinner-hidden').show();
   var query = document.getElementById("clubSearch").value;
-  var url = "http://127.0.0.1:8000/healthapple/healthapplesearchapi/?q=";
+  var url = "/healthapple/healthapplesearchapi/?q=";
   Get(url + query + search_param);
 }
 
