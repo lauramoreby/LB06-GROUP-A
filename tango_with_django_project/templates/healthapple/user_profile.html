@@ -12,14 +12,33 @@
         <div class = "details-only">
 		  	<i class="material-icons profile">person</i>{{ user.username |title }}<br>
 		  	<i class="material-icons profile">email</i>{{ user.email |upper }}<br>
+
+	</div>
+
+	
+		  	<a onclick = "javascript:notificationEnabler('logout')" href="{% url 'auth_logout' %}?next=/healthapple/" class="waves-effect waves btn-flat black-text right">Logout</a>
+			  <a href="{% url 'auth_password_change' %}" class="waves-effect waves btn-flat black-text right">Change Password</a>
+		  	</div>
+
+<br><br><br>
+      <ul class="collection">
+        
 		{% if category %}
 	{% for cat in category %}
         {% if pages %}
         <ul>	
-				<li>{{ cat }}</li>
+				<li><span class="title cat-name">{{ cat }}</span><br><br></li>
                 {% for page in pages %}
-				
-                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                <li class="collection-item avatar">
+                  <i class="material-icons circle">pages</i>
+                  <span class="title">{{ page.title }}</span>
+                  <p>Flesch score: To be done<br>
+                     Polarity score: To be done<br>
+                     Subjectivity score: To be done
+                  </p>
+                  <a href="{{ page.url }}" class="secondary-content"><i class="material-icons">link</i></a>
+                  </li>
+                
                 {% endfor %}
                 </ul>
         {% else %}
@@ -28,18 +47,13 @@
 
 	{% endfor %}
     
-    {% endif %}
-	</div>
-
-	
-		  	<a onclick = "javascript:notificationEnabler('logout')" href="{% url 'auth_logout' %}?next=/healthapple/" class="waves-effect waves btn-primary btn-flat black-text">Logout</a>
-			  <a href="{% url 'auth_password_change' %}" class="waves-effect waves btn-flat btn-primary black-text">Change Password</a>
-		  	</div>
-
+    {% endif %}	{% endif %}</ul>
 			</div>
 
-	{% endif %}
+
 	
 </div>
-</div>
+
+<br>
+
 {% endblock %}
