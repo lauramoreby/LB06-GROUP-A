@@ -39,6 +39,9 @@ function apiSelector(api) {
     Materialize.toast('Results updated', 2000, '');
     get_and_show_results(latest_result);
   }
+  else {
+    Materialize.toast('Source updated', 2000, '');
+  }
 }
 
 function notificationDisplay() {
