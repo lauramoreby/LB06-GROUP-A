@@ -142,7 +142,7 @@ function get_and_show_results(result){
     }
     var temp = "";
     temp += "<div class = 'title'>" + obj[item]['title'] + "<a href='javascript:save_page(\"" + obj[item]['link'] + "\")'><i class='material-icons right float-icon'>add</i></a> </div><br>";
-    temp += "<div class = 'title2'>" + obj[item]['summary'] + "</div>"; 
+    temp += "<div class = 'title2'>" + obj[item]['summary'].replace(/<(?:.|\n)*?>/gm, '') + "</div>"; 
     temp += "<div class = 'title2'><a href=\"javascript:openModal('#flesch-modal')\">Flesch score: </a>" + obj[item]['flesch_score'] + "</div>";
     temp += "<div class = 'title2'>Polarity score: " + obj[item]['polarity_score'] + "</div>";
     temp += "<div class = 'title2'>Subjectivity score: " + obj[item]['subjectivity_score'] + "</div>";
