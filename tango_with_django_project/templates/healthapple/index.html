@@ -12,7 +12,17 @@
           <input class="waves-effect waves btn-flat btn-primary black-text" type="submit" name="submit" value="Condition" onclick="javascript:type_fun('Condition')" />
           <input class="waves-effect waves btn-flat btn-primary black-text" type="submit" name="submit" value="Medicine" onclick="javascript:type_fun('Medicine')" />
           <input class="waves-effect waves btn-flat btn-primary black-text" type="submit" name="submit" value="Treatment" onclick="javascript:type_fun('Treatment')" />
-  
+          <a class='dropdown-button waves-effect waves btn-flat btn-primary green-text' href='#' data-activates='dropdown1'>API</a>
+          <!-- Dropdown Trigger -->
+          
+        
+          <!-- Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a class='black-text' href="javascript:apiSelector('mashup')">Mashup</a></li>
+            <li><a class='black-text' href="javascript:apiSelector('bing')">Bing</a></li>
+            <li><a class='black-text' href="javascript:apiSelector('health')">Health</a></li>
+          </ul>
+          
       </div>
       <div id = 'inset_form'></div>
   </div>

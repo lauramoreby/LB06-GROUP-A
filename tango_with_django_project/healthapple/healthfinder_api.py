@@ -29,17 +29,15 @@ def run_query(search_terms):
         json_response = json.loads(response)
         if 'Tools' not in json_response["Result"]:
             return []
-        
         # Loop through each page returned, populating out results list.
         for result in json_response["Result"]["Tools"]:
-            
-            blob = TextBlob(result['Contents'])
-            for sentence in blob.sentences:
-                polarity_score = sentence.sentiment.polarity
-                subjectivity_score = sentence.sentiment.subjectivity
-
-            url = ""
             try:
+              blob = TextBlob(result['Contents'])
+              for sentence in blob.sentences:
+                  polarity_score = sentence.sentiment.polarity
+                  subjectivity_score = sentence.sentiment.subjectivity
+    
+              url = ""
               
               if type(result['MoreInfo'])== list:
                   url = result['MoreInfo'][0]['Url']

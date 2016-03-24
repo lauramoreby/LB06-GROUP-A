@@ -17,6 +17,9 @@ if (localStorage.getItem("savedpage") == null) {
 }
 
 var search_param = "";
+var api_source = "";
+var latest_query = "";
+var latest_result = null;
 
 function onButton(code) {
       if (code == 13) {
@@ -28,6 +31,14 @@ function onButton(code) {
 
 function type_fun(search_type) {
   search_param = search_type;
+}
+
+function apiSelector(api) {
+  api_source = api;
+  if (latest_query != "") {
+    Materialize.toast('Results updated', 2000, '');
+    get_and_show_results(latest_result);
+  }
 }
 
 function notificationDisplay() {
@@ -112,15 +123,23 @@ function search() {
   // put the content into a hidden div
   $('#spinner-hidden').show();
   var query = document.getElementById("clubSearch").value;
+  latest_query = query;
   var url = "/healthapple/healthapplesearchapi/?q=";
   Get(url + query + search_param);
 }
 
 function get_and_show_results(result){
+  latest_result = result;
   var obj = JSON.parse(result);
   var results = "";
   $('#spinner-hidden').hide();
   for (var item in obj){
+    if (api_source == 'bing' && obj[item]['source'] == 'HealthFinder') {
+      continue;
+    }
+    if (api_source == 'health' && obj[item]['source'] == 'Bing') {
+      continue;
+    }
     var temp = "";
     temp += "<div class = 'title'>" + obj[item]['title'] + "<a href='javascript:save_page(\"" + obj[item]['link'] + "\")'><i class='material-icons right float-icon'>add</i></a> </div><br>";
     temp += "<div class = 'title2'>" + obj[item]['summary'] + "</div>"; 
@@ -131,6 +150,7 @@ function get_and_show_results(result){
     temp += "<a class='waves-effect waves btn-flat right blue-text' href=" + String(obj[item]['link']) + ">Visit Page</a><br>";
     results += createCard(temp);
   }
+  if (results == ""){results = createCard("No results found, try changing the query or API source")};
   $('#dynamic-results').html(results);
   $('.result_card').hide().show(0);
 }
