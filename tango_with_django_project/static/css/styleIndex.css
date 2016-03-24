@@ -137,6 +137,11 @@ body {
 
 }
 
+#profile-spacer{
+  width: 100%;
+  height:18rem;
+}
+
 #clubSearch {
     width: 100%;
     height: 2.5rem;

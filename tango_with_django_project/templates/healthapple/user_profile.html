@@ -7,7 +7,7 @@
     <div class = 'inner_main_content_card'>
       
 	{% if user.is_authenticated %}
-      <img class="responsive-img profile-pic" src="{% static "images/default-user.png" %}" >
+      <img class="responsive-img profile-pic left" src="{% static "images/default-user.png" %}" >
       <div class = 'right user-details'>
         <div class = "details-only">
 		  	<i class="material-icons profile">person</i>{{ user.username |title }}<br>
@@ -19,6 +19,8 @@
 		  	<a onclick = "javascript:notificationEnabler('logout')" href="{% url 'auth_logout' %}?next=/healthapple/" class="waves-effect waves btn-flat black-text right">Logout</a>
 			  <a href="{% url 'auth_password_change' %}" class="waves-effect waves btn-flat black-text right">Change Password</a>
 		  	</div>
+		  	<div id = 'profile-spacer'></div>
+		  	
 
 <br><br><br>
       <ul class="collection">
