@@ -191,8 +191,6 @@ body {
     box-shadow: 1px 1px 4px -2px #000000;
 }
 
-
-
 .result_card {
     animation-name: dropHeader;
     animation-iteration-count: 1;
@@ -200,9 +198,6 @@ body {
     animation-timing-function: ease-in-out;
     animation-duration: 0.2s;
 }
-
-
-
 
 #content {
 
@@ -257,7 +252,6 @@ t1 {
 }
 
 #spinner-hidden {display:none;}
-#dynamic-results-hidden {display:none;}
 
 #goUp {
     margin-right:-1rem;

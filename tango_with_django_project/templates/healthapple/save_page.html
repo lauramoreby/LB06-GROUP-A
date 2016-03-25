@@ -1,32 +1,28 @@
 {% extends 'base.html' %}
 {% block title %}Save Page{% endblock %}
-
-
 {% block body_block %}
-
 <div class = 'main_content_card shown' id = 'search_card'>
-  <div class = 'inner_main_content_card'>
-     <form role="form" id="page_form" method="POST" onsubmit = "javascript:notificationEnabler('savedpage')" action="/healthapple/save_page/">
-      {% csrf_token %}
-      {% for hidden in form.hidden_fields %}
-        {{ hidden }}
-      {% endfor %}
-      {% for field in form.visible_fields %}
-          {{ field.errors }}
-          {{ field.help_text }}<br/>
-          {{ field }}<br/>
-      {% endfor %}
-      <br/>
-      <button class="btn btn-primary waves-effect grey darken-3 waves" type="submit" name="submit" value="Save">Save Page</button>
-    </form>
+   <div class = 'inner_main_content_card'>
+      <form role="form" id="page_form" method="POST" onsubmit = "javascript:notificationEnabler('savedpage')" action="/healthapple/save_page/">
+         {% csrf_token %}
+         {% for hidden in form.hidden_fields %}
+         {{ hidden }}
+         {% endfor %}
+         {% for field in form.visible_fields %}
+         {{ field.errors }}
+         {{ field.help_text }}<br/>
+         {{ field }}<br/>
+         {% endfor %}
+         <br/>
+         <button class="btn btn-primary waves-effect grey darken-3 waves" type="submit" name="submit" value="Save">Save Page</button>
+      </form>
       <a class='dropdown-button waves-effect waves btn-flat btn-primary green-text' href='javascript:testing()' data-activates='dropdown1'>Category Selection</a>
       <a class='waves-effect waves btn-flat btn-primary black-text' href= "{% url 'add_category' %}">Add a new category</a>
-      
-  </div>
+   </div>
 </div>
 <ul id='dropdown1' class='dropdown-content'>
-{% for cat in category %}
-     <li><a class='black-text' href="javascript:catSel('{{ cat }}')">{{ cat }}</a></li>
-{% endfor %}
+   {% for cat in category %}
+   <li><a class='black-text' href="javascript:catSel('{{ cat }}')">{{ cat }}</a></li>
+   {% endfor %}
 </ul>
 {% endblock %}

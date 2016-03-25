@@ -1,3 +1,5 @@
+// Sets localally cross-page persistant variables for toast notification system
+
 if (localStorage.getItem("passChange") == null) {
   localStorage.setItem("passChange", 'false');
 }
@@ -21,36 +23,36 @@ if (localStorage.getItem("add_category") == null) {
 }
 
 
-var search_param = "";
-var api_source = "";
+var search_param = ""; // Search paramater modifier (treatment, medicine...etc)
+var api_source = ""; // API filter variable
 var latest_query = "";
 var latest_result = null;
 var selected_category = null;
 
-function onButton(code) {
+function onButton(code) { // Searches and loses search focus to hide keyboard on mobile when the enter key is pressed 
       if (code == 13) {
           loseSearchFocus();
           search();
       }
 }
 
-function type_fun(search_type) {
+function type_fun(search_type) { // Search paramater modifier function 
   search_param = search_type;
 }
 
-function apiSelector(api) {
+function apiSelector(api) { // API filter system
   api_source = api;
   if (latest_query != "") {
-    get_and_show_results(latest_result);
+    get_and_show_results(latest_result); // Redraws results
   }
 }
 
 function catSel(cat_name) {
-  selected_category = cat_name;
+  selected_category = cat_name; // Temp stores selected category
 }
 
 
-function notificationDisplay() {
+function notificationDisplay() { // Main notification and URL redirect + fix system executed on every page load
   if (window.location.href.slice(-11) == '/save_page/') {
     $('#id_url').val(localStorage.getItem("link"));
     if (localStorage.getItem("savedpage") == 'true') {
@@ -87,25 +89,25 @@ function notificationDisplay() {
   }
 }
 
-function notificationEnabler(type) {
+function notificationEnabler(type) { // Sets the local variable for the type passed to true for the notification system
   localStorage.setItem(type, 'true');
 }
 
-function createCard(content) {
+function createCard(content) { // Content wrapper helper
   return "<div class = 'main_content_card result_card'><div class = 'inner_main_content_card'>" + content + "</div></div><br>";
 }
 
-function toTop() { // Scrolls to top of page
+function toTop() { // Scrolls to top of page // Animates to top of the page
   $('html, body').animate({ scrollTop: 0 }, 'fast');
 }
 
-function onScroll() {
+function onScroll() { // Top (App bar) shadow handler
   loseSearchFocus();
   if ($("body").scrollTop() != 0) {topBarShadow.show();}
   else {topBarShadow.hide();}
 }
 
-function loseSearchFocus() {
+function loseSearchFocus() { // Loses search bar focus (hides keyboard on mobile)
   $("#clubSearch").blur();
 }
 
@@ -117,7 +119,7 @@ function getSearchFocus() { // Scrolls to top of page, resets search box value a
   });
 }
 
-var topBarShadow = {
+var topBarShadow = { // Top (App bar) shadow variable
   show: function() {
       $("#top_bar").css("box-shadow","0px -6px 6px 6px #000000");
   },
@@ -126,12 +128,12 @@ var topBarShadow = {
   }
 };
 
-function save_page(link) {
+function save_page(link) { // Saving pages redirector
   localStorage.setItem("link", link);
   window.location.href = 'save_page';
 }
 
-function search() {
+function search() { // Displays spinner and sends API request
   $('#dynamic-results').html("");
   $('#spinner-hidden').show();
   var query = document.getElementById("clubSearch").value;
@@ -140,16 +142,16 @@ function search() {
   Get(url + query + search_param);
 }
 
-function get_and_show_results(result){
+function get_and_show_results(result) { // Result generator, takes in results from main API
   latest_result = result;
   var obj = JSON.parse(result);
   var results = "";
   $('#spinner-hidden').hide();
   for (var item in obj){
-    if (api_source == 'bing' && obj[item]['source'] == 'HealthFinder') {
+    if (api_source == 'bing' && obj[item]['source'] == 'HealthFinder') { // API filtering system
       continue;
     }
-    if (api_source == 'health' && obj[item]['source'] == 'Bing') {
+    if (api_source == 'health' && obj[item]['source'] == 'Bing') { // API filtering system
       continue;
     }
     var temp = "";
@@ -167,12 +169,11 @@ function get_and_show_results(result){
   $('.result_card').hide().show(0);
 }
 
-function input () {
-  //function will get called every time a user types something into the search box
+function input () { // Beginnings of an autocorrect / complete system, more within view.py
   var word = document.getElementById("clubSearch").value;
 }
 
-function Get(yourUrl) {
+function Get(yourUrl) { // Main API Request handler, callsback result generator
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -183,6 +184,6 @@ function Get(yourUrl) {
   xhttp.send();
 }
 
-function openModal(id) {
+function openModal(id) { // Opens given 'Modal' pop up dialog
   $(id).openModal();
 }
