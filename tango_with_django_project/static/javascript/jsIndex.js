@@ -16,8 +16,8 @@ if (localStorage.getItem("savedpage") == null) {
   localStorage.setItem("savedpage", 'false');
 }
 
-if (localStorage.getItem("category") == null) {
-  localStorage.setItem("category", 'false');
+if (localStorage.getItem("add_category") == null) {
+  localStorage.setItem("add_category", 'false');
 }
 
 
@@ -25,12 +25,12 @@ var search_param = "";
 var api_source = "";
 var latest_query = "";
 var latest_result = null;
+var selected_category = null;
 
 function onButton(code) {
       if (code == 13) {
           loseSearchFocus();
           search();
-          
       }
 }
 
@@ -41,46 +41,49 @@ function type_fun(search_type) {
 function apiSelector(api) {
   api_source = api;
   if (latest_query != "") {
-    Materialize.toast('Results updated', 2000, '');
     get_and_show_results(latest_result);
-  }
-  else {
-    Materialize.toast('Source updated', 2000, '');
   }
 }
 
-function notificationDisplay(test) {
+function catSel(cat_name) {
+  selected_category = cat_name;
+}
+
+
+function notificationDisplay() {
   if (window.location.href.slice(-11) == '/save_page/') {
     $('#id_url').val(localStorage.getItem("link"));
     if (localStorage.getItem("savedpage") == 'true') {
       window.history.pushState('Home', 'Healthapple', '/healthapple/');
+      localStorage.setItem("savedpage", 'false');
+      Materialize.toast('Page saved succefully!', 4000, '');
+      localStorage.setItem("savedpage", 'false');
     }
   }
   if (window.location.href.slice(-14) == '/add_category/') {
-    $('#id_url').val(localStorage.getItem("category"));
     if (localStorage.getItem("add_category") == 'true') {
-      window.history.pushState('Home', 'Healthapple', '/healthapple/');
+      window.location.href = '/healthapple/save_page/';
+      $('#id_url').val(localStorage.getItem("link"));
+      localStorage.setItem("add_category", 'false');
     }
   }
-  if (localStorage.getItem("passChange") == 'true') {
-    Materialize.toast('Password changed succesfully!', 4000, '');
-    localStorage.setItem("passChange", 'false');
-  }
-  if (localStorage.getItem("login") == 'true') {
-    Materialize.toast('You are now logged in!', 4000, 'left');
-    localStorage.setItem("login", 'false');
-  }
-  if (localStorage.getItem("logout") == 'true') {
-    Materialize.toast('You are now logged out!', 4000, '');
-    localStorage.setItem("logout", 'false');
-  }
-  if (localStorage.getItem("newacc") == 'true') {
-    Materialize.toast('Account created succesfully!', 4000, '');
-    localStorage.setItem("newacc", 'false');
-  }
-  if (localStorage.getItem("savedpage") == 'true') {
-    Materialize.toast('Page saved succefully!', 4000, '');
-    localStorage.setItem("savedpage", 'false');
+  if (window.location.href.slice(-12) == 'healthapple/') {
+    if (localStorage.getItem("passChange") == 'true') {
+      Materialize.toast('Password changed succesfully!', 4000, '');
+      localStorage.setItem("passChange", 'false');
+    }
+    if (localStorage.getItem("login") == 'true') {
+      Materialize.toast('You are now logged in!', 4000, 'left');
+      localStorage.setItem("login", 'false');
+    }
+    if (localStorage.getItem("logout") == 'true') {
+      Materialize.toast('You are now logged out!', 4000, '');
+      localStorage.setItem("logout", 'false');
+    }
+    if (localStorage.getItem("newacc") == 'true') {
+      Materialize.toast('Account created succesfully!', 4000, '');
+      localStorage.setItem("newacc", 'false');
+    }
   }
 }
 
@@ -130,7 +133,6 @@ function save_page(link) {
 
 function search() {
   $('#dynamic-results').html("");
-  // put the content into a hidden div
   $('#spinner-hidden').show();
   var query = document.getElementById("clubSearch").value;
   latest_query = query;
@@ -165,17 +167,9 @@ function get_and_show_results(result){
   $('.result_card').hide().show(0);
 }
 
-function testing() {
-  alert("hello");
-}
-
-
 function input () {
   //function will get called every time a user types something into the search box
   var word = document.getElementById("clubSearch").value;
-
-//  $.getJSON( "http://suggestqueries.google.com/complete/search?client=firefox&q="+word, function( data ) {
-//});
 }
 
 function Get(yourUrl) {

@@ -141,6 +141,10 @@ def save_page(request):
     else:
         form = PageForm()
 
+    # Adds our results list to the template context under name pages.
+    # We also add the category object from the database to the context dictionary.
+    # We'll use this in the template to verify that the category exists.
+    context_dict['category'] = category_list
     context_dict['form']=form
     
     return render(request, 'healthapple/save_page.html', context_dict)

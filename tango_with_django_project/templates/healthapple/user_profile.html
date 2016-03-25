@@ -13,7 +13,8 @@
 		  	<i class="material-icons profile">person</i>{{ user.username |title }}<br>
 		  	<i class="material-icons profile">email</i>{{ user.email |upper }}<br>
 
-	</div>
+      	</div>
+      	<br>
 
 	
 		  	<a onclick = "javascript:notificationEnabler('logout')" href="{% url 'auth_logout' %}?next=/healthapple/" class="waves-effect waves btn-flat black-text right">Logout</a>
@@ -27,10 +28,10 @@
         
 		{% if category %}
 	{% for cat in category %}
-        {% if pages %}
         <ul>	
 				<li><span class="title cat-name">{{ cat }}</span><br><br></li>
                 {% for page in pages %}
+                {% if page.category == cat %}
                 <li class="collection-item avatar">
                   <i class="material-icons circle">pages</i>
                   <span class="title">{{ page.title }}</span>
@@ -40,12 +41,9 @@
                   </p>
                   <a href="{{ page.url }}" class="secondary-content"><i class="material-icons">link</i></a>
                   </li>
-                
+                {% endif %}
                 {% endfor %}
                 </ul>
-        {% else %}
-                >No pages currently in category.
-                {% endif %}
 
 	{% endfor %}
     

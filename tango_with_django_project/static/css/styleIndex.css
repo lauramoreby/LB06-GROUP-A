@@ -146,7 +146,7 @@ body {
 
 #profile-spacer{
   width: 100%;
-  height:18rem;
+  height:20rem;
 }
 
 #clubSearch {
@@ -189,10 +189,9 @@ body {
     background-color: white;
     height: 100%;
     box-shadow: 1px 1px 4px -2px #000000;
-    -webkit-transition: height 1s;
 }
 
-}
+
 
 .result_card {
     animation-name: dropHeader;
@@ -200,7 +199,6 @@ body {
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
     animation-duration: 0.2s;
-    
 }
 
 
