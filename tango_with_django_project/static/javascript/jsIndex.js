@@ -16,6 +16,11 @@ if (localStorage.getItem("savedpage") == null) {
   localStorage.setItem("savedpage", 'false');
 }
 
+if (localStorage.getItem("category") == null) {
+  localStorage.setItem("category", 'false');
+}
+
+
 var search_param = "";
 var api_source = "";
 var latest_query = "";
@@ -51,6 +56,12 @@ function notificationDisplay(test) {
       window.history.pushState('Home', 'Healthapple', '/healthapple/');
     }
   }
+  if (window.location.href.slice(-14) == '/add_category/') {
+    $('#id_url').val(localStorage.getItem("category"));
+    if (localStorage.getItem("add_category") == 'true') {
+      window.history.pushState('Home', 'Healthapple', '/healthapple/');
+    }
+  }
   if (localStorage.getItem("passChange") == 'true') {
     Materialize.toast('Password changed succesfully!', 4000, '');
     localStorage.setItem("passChange", 'false');
@@ -71,7 +82,6 @@ function notificationDisplay(test) {
     Materialize.toast('Page saved succefully!', 4000, '');
     localStorage.setItem("savedpage", 'false');
   }
-  alert(test);
 }
 
 function notificationEnabler(type) {
@@ -112,10 +122,6 @@ var topBarShadow = {
       $("#top_bar").css("box-shadow","");
   }
 };
-
-function passChange() {
-  alert("Hi");
-}
 
 function save_page(link) {
   localStorage.setItem("link", link);

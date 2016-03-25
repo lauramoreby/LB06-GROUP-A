@@ -3,11 +3,13 @@
 {% block title %}Healthapple{% endblock %}
  
 {% block body_block %}
-		<div class="page-header">
-        <h1>Add a new Category</h1>
+  <div onload = "javascript:passChange()" class = 'main_content_card shown' id = 'search_card'>
+      <div class = 'inner_main_content_card'>
+<div class="page-header">
 		</div>
-        <form role="form" id="category_form" method="post" action="/healthapple/add_category/">
-
+		Category Name
+        <form role="form" onsubmit="javascript:notificationEnabler('add_category')" id="category_form" method="post" action="/healthapple/add_category/">
+  
             {% csrf_token %}
             {% for hidden in form.hidden_fields %}
                 {{ hidden }}
@@ -19,6 +21,9 @@
                 {{ field }}
             {% endfor %}
 
-            <button class="btn btn-primary" type="submit" name="submit">Add New Category</button>
+            <button class="btn btn-primary waves-effect grey darken-3 wave" type="submit" name="submit">Add</button>
         </form>
+        
+</div>
+</div>
 {% endblock %}
