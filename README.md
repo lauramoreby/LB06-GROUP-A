@@ -25,11 +25,9 @@ To run the server, type python manage.py runserver
 You might also run into missing corpus error when you submit a query. To fix this issue, you will have to download a python module
 called corpora by running this code in your terminal, python -m textblob.download_corpora
 
-Note: To save a page, user has to be logged in or else, error will occur
-
 ####API
 
-For this application, we used three APIs, namely BingSearch API, MedlinePlus API and Healthfinder API.
+For this application, we used two APIs, namely BingSearch API and Healthfinder API.
 
 We also used Google API for inline query suggestions.
 
