@@ -137,6 +137,13 @@ body {
 
 }
 
+.scores{
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  
+  
+}
+
 #profile-spacer{
   width: 100%;
   height:18rem;

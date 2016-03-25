@@ -44,7 +44,7 @@ function apiSelector(api) {
   }
 }
 
-function notificationDisplay() {
+function notificationDisplay(test) {
   if (window.location.href.slice(-11) == '/save_page/') {
     $('#id_url').val(localStorage.getItem("link"));
     if (localStorage.getItem("savedpage") == 'true') {
@@ -71,6 +71,7 @@ function notificationDisplay() {
     Materialize.toast('Page saved succefully!', 4000, '');
     localStorage.setItem("savedpage", 'false');
   }
+  alert(test);
 }
 
 function notificationEnabler(type) {
@@ -146,10 +147,10 @@ function get_and_show_results(result){
     var temp = "";
     temp += "<div class = 'title'>" + obj[item]['title'] + "<a href='javascript:save_page(\"" + obj[item]['link'] + "\")'><i class='material-icons right float-icon'>add</i></a> </div><br>";
     temp += "<div class = 'title2'>" + obj[item]['summary'].replace(/<(?:.|\n)*?>/gm, '') + "</div>"; 
-    temp += "<div class = 'title2'><a href=\"javascript:openModal('#flesch-modal')\">Flesch score: </a>" + obj[item]['flesch_score'] + "</div>";
-    temp += "<div class = 'title2'>Polarity score: " + obj[item]['polarity_score'] + "</div>";
-    temp += "<div class = 'title2'>Subjectivity score: " + obj[item]['subjectivity_score'] + "</div>";
-    temp += "Source: " + obj[item]['source'] + "<br>";
+    temp += "<br><div class = 'title2'><a href=\"javascript:openModal('#flesch-modal')\"><i class=\"material-icons scores\">info_outline</i></a> Flesch Score: " + obj[item]['flesch_score'] + "</div>";
+    temp += "<div class = 'title2'><a href=\"javascript:openModal('#polarity-modal')\"><i class=\"material-icons scores\">info_outline</i></a> Polarity Score: " + obj[item]['polarity_score'] + "</div>";
+    temp += "<div class = 'title2'><a href=\"javascript:openModal('#subjectivity-modal')\"><i class=\"material-icons scores\">info_outline</i></a> Subjectivity Score: " + obj[item]['subjectivity_score'] + "</div>";
+    temp += "<br>Source: " + obj[item]['source'] + "<br>";
     temp += "<a class='waves-effect waves btn-flat right blue-text' href=" + String(obj[item]['link']) + ">Visit Page</a><br>";
     results += createCard(temp);
   }
@@ -158,6 +159,9 @@ function get_and_show_results(result){
   $('.result_card').hide().show(0);
 }
 
+function testing() {
+  alert("hello");
+}
 
 
 function input () {

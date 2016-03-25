@@ -10,6 +10,7 @@ import ast
 import json
 import urllib2, base64
 from multiprocessing.dummy import Pool as ThreadPool
+from django.contrib.auth.decorators import login_required
 
 query = ''
 
@@ -108,9 +109,8 @@ def add_category(request):
     # Render the form with error messages (if any).
     return render(request, 'healthapple/add_category.html', {'form': form})
 
-
+@login_required
 def save_page(request):
-
     try:
         # show lists of categories the user have
         person = Person.objects.get(user=request.user)
